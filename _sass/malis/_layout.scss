@@ -1,0 +1,312 @@
+.light {
+  /*
+  Wrapper around body
+  */
+  .wrapper {
+    max-width: MIN($content-width, $content-max-width);
+    padding: 1em 3vw;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 1em;
+    background-color: $bg-1;
+  }
+
+  .wrapper2 {
+    max-width: MIN($content-width, $content-max-width);
+    padding: 0 3vw;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+
+  /*
+  Styling for the page
+  */
+  .page-date {
+    color: $text-2;
+  }
+
+  .page-tag {
+    font-size: $base-font-size;
+    margin-right: 0.5em;
+  }
+
+  .page-title {
+    a { color: $text-1; }
+    a:hover { color: $text-1; }
+    a:visited { color: $text-1; }
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 0.25em;
+    font-size: 2.5em;
+  }
+
+
+  /*
+  Styling for post list
+  */
+  .post-list {
+    margin-top: 2em;
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 2.5em;
+  }
+
+  .post-element {
+    margin-bottom: 1em;
+  }
+
+  .post-date {
+    color: $text-2;
+    user-select: none;
+  }
+
+  .post-title {
+    margin-bottom: 0;
+    margin-top: 0;
+    letter-spacing: -0.5px;
+    border-bottom: none;
+  }
+
+
+  /*
+  Styling for tags
+  */
+  .post-tag {
+    font-size: $base-font-size;
+    margin-right: 0.5em;
+    color: $text-2 !important;
+  }
+
+  .post-tags-list {
+    user-select: none;
+  }
+
+  /*
+  Styling for tag page
+  */
+
+  .tag-tag > a {
+    color: $text-1;
+  }
+
+  
+  /*
+  Styling for navbar
+  */
+  .navbar {
+    margin-bottom: 3em;
+    user-select: none;
+  }
+
+  .navbar-home {
+    margin-bottom: 2em;
+    user-select: none;
+  }
+
+  .navbar2 {
+    text-align: center;
+    margin-bottom: 3em;
+    user-select: none;
+  }
+
+  .navbar3 {
+    margin-top: 3em;
+    min-height: 1em;
+    user-select: none;
+  }
+
+  .navbar3_1 {
+    color: $text-2;
+    font-size: $small-font-size;
+  }
+
+  .navbar3_2 {
+    float: right;
+  }
+
+  .navbar4 {
+    display: flex;
+    justify-content: right;
+  }
+
+  .navbar4_2 {
+    float: left;
+  }
+
+  .navbar5 {
+    margin-top: 1em;
+    min-height: 1em;
+    user-select: none;
+  }
+
+  .navbar-right {
+    float: right;
+  }
+
+  .navbar-date {
+    margin-bottom: 0.5em;
+  }
+
+  .navbar-category-list {
+    margin-right: 1em;
+  }
+}
+
+.dark {
+  /*
+  Wrapper around body
+  */
+  .wrapper {
+    max-width: MIN($content-width, $content-max-width);
+    padding: 1em 3vw;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 1em;
+    background-color: $bg-1-dark;
+  }
+
+  .wrapper2 {
+    max-width: MIN($content-width, $content-max-width);
+    padding: 0 3vw;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+
+  /*
+  Styling for the page
+  */
+  .page-date {
+    color: $text-2-dark;
+  }
+
+  .page-tag {
+    font-size: $base-font-size;
+    margin-right: 0.5em;
+  }
+
+  .page-title {
+    a { color: $text-1-dark; }
+    a:hover { color: $text-1-dark; }
+    a:visited { color: $text-1-dark; }
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 0.25em;
+    font-size: 2.5em;
+  }
+
+
+  /*
+  Styling for post list
+  */
+  .post-list {
+    margin-top: 2em;
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 2.5em;
+  }
+
+  .post-element {
+    margin-bottom: 1em;
+  }
+
+  .post-date {
+    color: $text-2-dark;
+    user-select: none;
+  }
+
+  .post-title {
+    margin-bottom: 0;
+    margin-top: 0;
+    letter-spacing: -0.5px;
+    border-bottom: none;
+  }
+
+
+  /*
+  Styling for tags
+  */
+  .post-tag {
+    font-size: $base-font-size;
+    margin-right: 0.5em;
+    color: $text-2 !important;
+  }
+
+  .post-tags-list {
+    user-select: none;
+  }
+
+  /*
+  Styling for tag page
+  */
+
+  .tag-tag > a {
+    color: $text-1-dark;
+  }
+
+
+  /*
+  Styling for navbar
+  */
+  .navbar {
+    margin-bottom: 3em;
+    user-select: none;
+  }
+
+  .navbar-home {
+    margin-bottom: 2em;
+    user-select: none;
+  }
+
+  .navbar2 {
+    text-align: center;
+    margin-bottom: 3em;
+    user-select: none;
+  }
+
+  .navbar3 {
+    margin-top: 3em;
+    min-height: 1em;
+    user-select: none;
+  }
+
+  .navbar3_1 {
+    color: $text-2-dark;
+    font-size: $small-font-size-dark;
+  }
+
+  .navbar3_2 {
+    float: right;
+  }
+
+  .navbar4 {
+    display: flex;
+    justify-content: right;
+  }
+
+  .navbar4_2 {
+    float: left;
+  }
+
+  .navbar5 {
+    margin-top: 1em;
+    min-height: 1em;
+    user-select: none;
+  }
+
+  .navbar-right {
+    float: right;
+  }
+
+  .navbar-date {
+    margin-bottom: 0.5em;
+  }
+
+  .navbar-category-list {
+    margin-right: 1em;
+  }
+}
+

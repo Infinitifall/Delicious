@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<div class="wrapper2">
+  <nav class="navbar5">
+    <span class="navbar4_2">
+      <a href="{{ '/' | relative_url }}">Go home</a>
+    </span>
+    <span class="navbar4">
+      {% include theme-toggle.html %}
+    </span>
+  </nav>
+</div>
+<div class="wrapper">
+  {% if page.title %}
+  <h1 class="page-title">{{ page.title }}</h1>
+  {% endif %}
+  <nav class="navbar2">
+    <div class="navbar-date">
+      {% if page.updated %}
+      <span class="page-date">
+        {% assign date_format = "%d %B %Y" %}
+        {{ page.updated | date: date_format }}
+      </span>
+      {% else if page.date %}
+      <span class="page-date">
+        {% assign date_format = "%d %B %Y" %}
+        {{ page.date | date: date_format }}
+      </span>
+      {% endif %}
+    </div>
+    <div class="navbar-tag-list">
+      {% for tag in page.tags %}
+        <a href="{{ site.url }}/tags.html#{{ tag }}" class="page-tag">#{{ tag }}</a>
+      {% endfor %}
+    </div>
+  </nav>
+  <main class="main-post">
+    {{ content }}
+  </main>
+</div>
+<div class="wrapper2">
+  <nav class="navbar3">
+    <span class="navbar3_1">
+      Text under <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+    </span>
+    <span class="navbar3_2">
+      <a href="#" >Go to top</a>
+    </span>
+  </nav>
+</div>

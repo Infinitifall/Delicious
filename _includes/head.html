@@ -1,0 +1,48 @@
+<head>
+  <meta charset="utf-8">
+  
+  <link rel="stylesheet" href='{{ "/assets/main.css" | relative_url }}'>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/x-icon" href='{{ "assets/images/favicon.webp" | relative_url }}'>
+  <meta property="og:image" content='{{ "assets/images/favicon.webp" | relative_url }}'>
+
+  {% if page.title %}
+  <title>{{ page.title }}</title>
+  <meta name="title" content="{{ page.title }}">
+  <meta property="og:title" content="{{ page.title }}">
+  {% else if site.title %}
+  <title>{{ site.title }}</title>
+  <meta name="title" content="{{ site.title }}">
+  <meta property="og:title" content="{{ site.title }}">
+  {% endif %}
+
+  {% if page.date %}
+  <meta property="article:published_time " content="{{ page.date }}">
+  {% endif %}
+
+  {% if page.author %}
+  <meta name="author" content="{{ page.author }}">
+  {% else if site.author %}
+  <meta name="author" content="{{ site.author }}">
+  {% endif %}
+
+  {% if page.excerpt %}
+  <meta name="description" content="{{ page.excerpt }}">
+  <meta property="og:description" content="{{ page.excerpt }}">
+  {% endif %}
+
+  <meta name="twitter:card" content="summary">
+
+  <meta property="og:url" content="{{ page.url }}">
+  <link rel="canonical" href="{{ page.url }}">
+
+  <script src='{{ "/assets/scripts/theme-toggle.js" | relative_url }}'></script>
+
+  {% if page.latex %}
+  {% include latex.html %}
+  {% endif %}
+</head>

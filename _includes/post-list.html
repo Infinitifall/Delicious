@@ -1,0 +1,17 @@
+<li class="post-list">
+  <div class="post-date">
+    {% if post.updated %}
+    {% assign date_format = "%d %b %y" %}
+    {{ post.updated | date: date_format }}
+    {% else if post.date %}
+    {% assign date_format = "%d %b %y" %}
+    {{ post.date | date: date_format }}
+    {% endif %}
+  </div>
+  <h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+  <div class="post-tags-list">
+    {% for tag in post.tags %}
+      <a href="{{ site.url }}/tags.html#{{ tag }}" class="post-tag">#{{ tag }}</a>
+    {% endfor %}
+  </div>
+</li>

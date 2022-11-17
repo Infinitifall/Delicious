@@ -1,0 +1,348 @@
+
+.light {
+  body {
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    font-weight: $base-font-weight;
+    letter-spacing: $base-letter-spacing;
+
+    color: $text-1;
+    background-color: $bg-0;
+    // text-align: justify;
+    // background-image: url($bg-image);
+    // background-attachment: fixed;
+  }
+
+
+  /*
+  Links
+  */
+  a { color: $link-1; text-decoration: none; }
+  a:visited { color: $link-1; }
+  a:hover { text-decoration: underline; color: darken($color: $link-1, $amount: 5%)}
+
+
+  /*
+  Images
+  */
+  img {
+    margin-top: 1em + 2em;
+    margin-bottom: 2em;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    max-width: MIN($image-width, $content-max-width);
+  }
+
+
+  /*
+  Image captions
+  */
+  img + em {
+    margin-top: -1.5em;
+    margin-bottom: 2em;
+
+    display: block;
+    text-align: center;
+
+    color: $text-2;
+  }
+
+
+  /*
+  Tables
+  */
+  table, th, td {
+    margin: 2em 1em;
+    padding: 0.3em 0.5em;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: $bg-2;
+    
+    border: 1px solid $text-2;
+    border-collapse: collapse;
+  }
+
+  tr:nth-child(even), thead {
+    background-color: $bg-2;
+  }
+
+
+  /*
+  Code and preformatted text
+  */
+  code {
+    color: $code-0;
+    font-family: $code-font-family;
+    font-size: $code-font-size;
+    background-color: $bg-2;
+    padding: 0.05em 0.2em;
+    border-radius: 0.4em;
+    border: 1px darken($bg-2, 10%) solid;
+  }
+
+  figure {
+    margin: 0 0;
+  }
+
+  pre {
+    overflow-x: auto;
+    // border: 1px darken($bg-2, 10%) solid;
+
+    > code {
+      display: block;
+      margin: 0 0;
+      padding: 1em 1em;
+      border: none;
+      background-color: transparent;
+    }
+  }
+
+
+  /*
+  Quote
+  */
+  blockquote {
+    margin: 2em 1em;
+    padding: 0 1em;
+    border-left: 4px solid $text-2;
+    color: $text-2;
+  }
+
+
+  /*
+  Headings
+  */
+  h1, h2, h3, 
+  h4, h5, h6 {
+    margin-top: 2em;
+    color: $text-0;
+  }
+
+  // h1, h2 { border-bottom: 1px solid $bg-2;}
+
+  h1 { font-size: 2em; }
+  h2 { font-size: 1.6em; }
+  h3 { font-size: 1.2em; }
+  h4 { font-size: 1em; }
+  h5 { font-size: 0.8em; }
+  h6 { font-size: 0.6em; }
+
+
+  /*
+  Breaks
+  */
+  hr {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    height: 1px;
+    color: $bg-2;
+    background-color: $bg-2;
+    border-style: solid;
+  }
+
+  button {
+    background-color: $button-1-bg;
+    font-family: $base-font-family;
+    font-size: $small-font-size;
+    padding: 0.2em 0.5em;
+    padding-top: 0.4em;
+    color: $button-1;
+    border: none;
+    border-radius: 0.4em;
+    transition-duration: 0.2s;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: darken($button-1-bg, 5%);
+  }
+
+  textarea {
+    color: $text-1;
+    font-size: $code-font-size;
+    background-color: $bg-2;
+    padding: 0.1em 0.3em;
+    border-radius: 0.4em;
+    border: none;
+  }
+}
+
+
+.dark {
+  body {
+    font-family: $base-font-family-dark;
+    font-size: $base-font-size-dark;
+    line-height: $base-line-height-dark;
+    font-weight: $base-font-weight-dark;
+    letter-spacing: $base-letter-spacing-dark;
+
+    color: $text-1-dark;
+    background-color: $bg-0-dark;
+    // text-align: justify;
+    // background-image: url($bg-image-dark);
+    // background-attachment: fixed;
+  }
+
+  /*
+  Links
+  */
+  a { color: $link-1-dark; text-decoration: none; }
+  a:visited { color: $link-1-dark; }
+  a:hover { text-decoration: underline; color: lighten($color: $link-1-dark, $amount: 5%)}
+
+
+  /*
+  Images
+  */
+  img {
+    margin-top: 1em + 2em;
+    margin-bottom: 2em;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    max-width: MIN($image-width-dark, $content-max-width-dark);
+  }
+
+
+  /*
+  Image captions
+  */
+  img + em {
+    margin-top: -1.5em;
+    margin-bottom: 2em;
+
+    display: block;
+    text-align: center;
+
+    color: $text-2-dark;
+  }
+
+
+  /*
+  Tables
+  */
+  table, th, td {
+    margin: 2em 1em;
+    padding: 0.3em 0.5em;
+
+    margin-left: auto;
+    margin-right: auto;
+    
+    background-color: $bg-2-dark;
+
+    border: 1px solid $text-2-dark;
+    border-collapse: collapse;
+  }
+
+  tr:nth-child(even), thead {
+    background-color: $bg-2-dark;
+  }
+
+
+  /*
+  Code and preformatted text
+  */
+  code {
+    color: $code-0-dark;
+    font-family: $code-font-family-dark;
+    font-size: $code-font-size-dark;
+    background-color: $bg-2-dark;
+    padding: 0.05em 0.2em;
+    border-radius: 0.4em;
+    border: 1px lighten($bg-2-dark, 20%) solid;
+  }
+
+  figure {
+    margin: 0 0;
+  }
+
+  pre {
+    overflow-x: auto;
+    // border: 1px lighten($bg-2-dark, 20%) solid;
+
+    > code {
+      display: block;
+      margin: 0 0;
+      padding: 1em 1em;
+      border: none;
+      background-color: transparent;
+    }
+  }
+
+
+  /*
+  Quote
+  */
+  blockquote {
+    margin: 2em 1em;
+    padding: 0 1em;
+    border-left: 4px solid $text-2-dark;
+    color: $text-2-dark;
+  }
+
+
+  /*
+  Headings
+  */
+  h1, h2, h3, 
+  h4, h5, h6 {
+    margin-top: 2em;
+    color: $text-0-dark;
+  }
+
+  // h1, h2 { border-bottom: 1px solid $bg-2-dark;}
+
+  h1 { font-size: 2em; }
+  h2 { font-size: 1.6em; }
+  h3 { font-size: 1.2em; }
+  h4 { font-size: 1em; }
+  h5 { font-size: 0.8em; }
+  h6 { font-size: 0.6em; }
+
+
+  /*
+  Breaks
+  */
+  hr {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    height: 1px;
+    color: $bg-2-dark;
+    background-color: $bg-2-dark;
+    border-style: solid;
+  }
+
+  button {
+    background-color: $button-1-bg-dark;
+    font-family: $base-font-family;
+    font-size: $small-font-size;
+    padding: 0.2em 0.5em;
+    padding-top: 0.4em;
+    color: $button-1-dark;
+    border: none;
+    border-radius: 0.4em;
+    transition-duration: 0.2s;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: darken($button-1-bg-dark, 5%);
+  }
+
+  textarea {
+    color: $text-1-dark;
+    font-size: $code-font-size-dark;
+    background-color: $bg-2-dark;
+    padding: 0.1em 0.3em;
+    border-radius: 0.4em;
+    border: none;
+  }
+}

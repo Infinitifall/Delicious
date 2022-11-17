@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+
+//light theme
+
+$base-font-family: Helvetica, sans-serif;
+$base-font-size: 17px;
+$base-line-height: 1.4;
+$base-font-weight: 400;
+$base-letter-spacing: 0;
+$small-font-size: $base-font-size * 0.85;
+$code-font-family: monospace;
+$code-font-size: $base-font-size * 0.85;
+$tag-font-size: $base-font-size * 0.8;
+
+$text-0: #333;
+$text-1: #333;
+$text-2: #888;
+$code-0: #4a8d79;
+$bg-0:   #fff;
+$bg-1:   #fff;
+$bg-2:   #e9f2ef;
+$link-1: #0eb077;
+$button-1: #8638b0;
+$button-1-bg: #eee;
+// $bg-image: "/assets/images/pomegranate_william_morris.webp";
+
+$content-width: 750px;
+$image-width: 400px;
+$content-max-width: 95%;
+
+
+// dark theme
+
+$base-font-family-dark: Helvetica, sans-serif;
+$base-font-size-dark: 17px;
+$base-line-height-dark: 1.4;
+$base-font-weight-dark: 400;
+$base-letter-spacing-dark: 0;
+$small-font-size-dark: $base-font-size-dark * 0.85;
+$code-font-family-dark: monospace;
+$code-font-size-dark: $base-font-size-dark * 0.85;
+$tag-font-size-dark: $base-font-size-dark * 0.8;
+
+$text-0-dark: #ccc;
+$text-1-dark: #ccc;
+$text-2-dark: #777;
+$code-0-dark: #ccc;
+$bg-0-dark:   #36393E;
+$bg-1-dark:   #36393E;
+$bg-2-dark:   #2b2e34;
+$link-1-dark: #79bfc5;
+$button-1-dark: #cc8dee;
+$button-1-bg-dark: #2b2e34;
+// $bg-image-dark: "/assets/images/vines_william_morris.webp";
+
+$content-width-dark: 750px;
+$image-width-dark: 400px;
+$content-max-width-dark:95%;
+
+
+@import
+  "malis/base",
+  "malis/layout",
+  "malis/syntax-highlighting"
+;
