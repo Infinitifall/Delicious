@@ -92,7 +92,7 @@
 
   pre {
     overflow-x: auto;
-    // border: 1px darken($bg-2, 10%) solid;
+    border: 1px darken($bg-2, 10%) solid;
 
     > code {
       display: block;
@@ -266,7 +266,7 @@
 
   pre {
     overflow-x: auto;
-    // border: 1px lighten($bg-2-dark, 20%) solid;
+    border: 1px lighten($bg-2-dark, 20%) solid;
 
     > code {
       display: block;
