@@ -3,42 +3,39 @@ layout: post
 title: "Detecting hidden cube faces"
 excerpt: "Given the sizes, positions and orientations of cubes in 3D space, find cube faces which are hidden from view."
 date: 2022-10-19 9:00:00 +1100
-updated: 2022-10-26 22:00:00 +1100
-tags: 3d-geometry javascript
+updated: 2022-11-25 22:45:00 +1100
+tags: 3d-geometry c
 categories: Scripting
 latex: true
 ---
 
-**Problem**: Given the sizes, positions and orientations of cubes in 3D space, find cube faces which are hidden from view.
+**Problem**: Given the sizes, positions and orientations of cubes in 3D space, find cube faces which are hidden from view. A "face" here refers to one of the six faces of a cube and is "hidden" if it is covered by one or more other cubes.
 
-**Motive**: Disabling rendering for hidden faces nets a significant performance boost with no change in appearance. Besides, its simply [irresistible](https://xkcd.com/356/).
-
-A "face" in this context refers to one of the six faces of a cube. A face is "hidden" if it is completely covered by or inside one or more other cubes. This could be as simple as two similar cube faces touching, a small cube face inside a larger cube or as complicated as multiple cubes together covering up a larger cube face.
+**Motive**: Disabling rendering for hidden faces nets a significant performance boost with no change in appearance when viewed from outside.
 
 ![Cuboids in various orientations, some of which have their faces hidden inside another]({{ "assets/images/face-remove/face-remove_1.png" | relative_url }})
 *The blue cube has one of its faces hidden, so does the yellow cube*
 
-
-Throughout this article "cube" and "cuboid" are used interchangeably and mean the same thing - a cuboid with a length, breadth and height. Cubes have three properties that we care about,
-  
-- **Position**, represented by the vector $$\textbf{p} = [p_x, p_y, p_z]$$, the $$X$$, $$Y$$ and $$Z$$ coordinates of the position of the center of the cube
-
-- **Size**, represented by the vector $$\textbf{s} = [s_x, s_y, s_z]$$, the length, height and breadth or dimensions of the cube along the $$X$$, $$Y$$ and $$Z$$ axes, respectively (when not rotated)
-
-- **Rotation or orientation**, used here interchangeably and represented by the vector $$\textbf{r} = [r_x, r_y, r_z]$$, the [angles](https://en.wikipedia.org/wiki/Euler_angles) by which the cube is rotated about the $$X$$, $$Y$$, $$Z$$ axes (when $$\textbf{r} = [0,0,0]$$ the sides of the cube are parallel to the axes)
-
 ![Multiple cubes together cover the face of another]({{ "assets/images/face-remove/face-remove_2.png" | relative_url }})
 *The orange cube has a face hidden due to multiple other cubes*
+
+"Cube" and "cuboid" are used interchangeably but mean the same thing - a cuboid with a length, breadth and a height. They have three properties that we care about,
+  
+- **Position** $$\textbf{p} = [p_x, p_y, p_z]$$, the $$X$$, $$Y$$ and $$Z$$ coordinates of the center of the cube
+
+- **Size** $$\textbf{s} = [s_x, s_y, s_z]$$, the length, height and breadth or the dimensions of the cube along the $$X$$, $$Y$$ and $$Z$$ axes when not rotated
+
+- **Rotation or orientation** $$\textbf{r} = [r_x, r_y, r_z]$$, the [angles](https://en.wikipedia.org/wiki/Euler_angles) by which the cube is rotated about the $$X$$, $$Y$$, $$Z$$ axes
 
 
 ## A simpler problem
 
-Lets first try to tackle the simpler problem where all cubes have orientation $$\textbf{r} = [0,0,0]$$ so their sides parallel to the $$X$$, $$Y$$ and $$Z$$ axes, and where we only care about detecting hidden faces that are touching or completely inside **one** other cube and don't care whether multiple cubes together cover up a face.
+Lets first tackle the simpler problem where all cubes have orientation $$\textbf{r} = [0,0,0]$$, making their sides parallel to the $$X$$, $$Y$$ and $$Z$$ axes. Lets also only focus on cases where cube faces are completely covered by just **one** other cube.
 
 ![Cubes in the same orientation, some of which have their faces completely inside another cube]({{ "assets/images/face-remove/face-remove_3.png" | relative_url }})
 *This situation is much easier to solve*
 
-Lets take the example of a red cube which has a face completely inside a blue cube. Let their positions and sizes be given by $$p_r$$, $$s_r$$, $$p_b$$, $$s_b$$. For the red cube's face in the $$-Z$$ direction to be completely covered by or inside by the blue cube, we have the following restrictions
+Taking the example of a red cube with a face completely inside a blue cube, let their positions and sizes be $$p_r$$, $$s_r$$, $$p_b$$, $$s_b$$. For red's $$-Z$$ direction face to be fully covered, we need
 
 $$
 \begin{align*}
@@ -51,15 +48,28 @@ $$
 ![A red cube half inside a blue cube]({{ "assets/images/face-remove/face-remove_4.png" | relative_url }})
 *A red cube half inside a blue cube, shown from different angles*
 
-And that is all we need to solve this simplified problem! A [pseudocode](https://www.unf.edu/~broggio/cop2221/2221pseu.htm) solution would be as follows
+And that is all we need to solve this simplified problem! A [pseudocode](https://www.unf.edu/~broggio/cop2221/2221pseu.htm) solution would look like this
 
 ```lua
+function checkFaceCovered(cube1, face, cube2):
+    pz1, sz1, pz2, sz2 := position and size coordinates of cube1 and cube2 along axis of face
+    px1, sx1, px2, sx2, py1, sy1, py2, sy2 := position coordinates of cube1 and cube2 along other two axes
+    if (
+        abs(px1 - px2) <= abs(sx1 - sx2) / 2 and
+        abs(py1 - py2) <= abs(sy1 - sy2) / 2 and
+        abs(pz1 - pz2) <= abs(sz1 + sz2) / 2
+    )
+        return true
+    else
+        return false
+
 for each cube1 in cubes
-    for each face in cube1
+    for each face in cube1.faces
         for each cube2 in cubes
-            if cube1 and cube2 are different
-                if the equations above hold for face and cube2
-                    face is hidden
+            if cube1 and cube2 are same
+                continue
+            if checkFaceCovered(cube1, face, cube2)
+                face is hidden
 
 ```
 
@@ -76,22 +86,26 @@ $$
 \end{align*}
 $$
 
-We construct the pseudocode function
+Converting this to a pseudocode function
 
 ```lua
 function checkPointInsideCube(v, p, s):
-    if abs(v.x - p.x) <= s.x/2 and abs(v.y - p.y) <= s.y/2 and abs(v.z - p.z) <= s.z/2
+    if (
+        abs(v.x - p.x) <= s.x/2 and 
+        abs(v.y - p.y) <= s.y/2 and
+        abs(v.z - p.z) <= s.z/2
+    )
         return true
     else
         return false
 ```
 
-How would we handle the general case where the cube has some orientation $$\textbf{r} = [r_x, r_y, r_z]$$?
+How would we handle the general case where the cube has some non-zero orientation $$\textbf{r} = [r_x, r_y, r_z]$$?
 
 
 ## Rotations in 3D
 
-To rotate the vector $$\textbf{v} = [x, y, z]$$ by the angles $$\theta_x, \theta_y, \theta_z$$ about the $$X$$, $$Y$$, $$Z$$ axes, we use the standard [rotation matrices](https://en.wikipedia.org/wiki/Rotation_matrix#In_three_dimensions) and get the resultant vector $$\textbf{v}_r = [x_r, y_r, z_r]$$ as
+To rotate the vector $$\textbf{v} = [x, y, z]$$ by the angles $$\theta_x, \theta_y, \theta_z$$ about the $$X$$, $$Y$$, $$Z$$ axes, we multiply it with the standard [rotation matrices](https://en.wikipedia.org/wiki/Rotation_matrix#In_three_dimensions) and get the resultant vector $$\textbf{v}_r = [x_r, y_r, z_r]$$ as
 
 $$
 \begin{align*}
@@ -124,11 +138,11 @@ $$
 
 $$\textbf{v}_r^T = R_x \times R_y \times R_z \times \textbf{v}^T$$
 
-Similarly, the rotated vector $$\textbf{v}_r$$ can be "inversely" rotated by multiplying it with the inverse rotation matrices $$R^{-1}_x$$, $$R^{-1}_y$$, $$R^{-1}_z$$ in reverse order to get back our original vector $$\textbf{v}$$ as
+Similarly, this rotated vector $$\textbf{v}_r$$ can be "inversely" rotated by multiplying it with the inverse rotation matrices $$R^{-1}_x$$, $$R^{-1}_y$$, $$R^{-1}_z$$ in reverse order to get back our original vector $$\textbf{v}$$ as
 
 $$\textbf{v}^T = R^{-1}_z \times R^{-1}_y \times R^{-1}_x \times \textbf{v}_r^T$$
 
-We construct the pseudocode functions (abstracting away implementation details)
+Abstracting away implementation details, we get the pseudocode functions
 
 ```lua
 function rotateVector3D(v, r)
@@ -141,9 +155,9 @@ function rotateVector3DInverse(v, r)
 
 ## Checking whether a point lies inside a rotated cube
 
-Going back to our earlier problem of checking whether a point $$\textbf{v}$$ lies inside a rotated cube, a clever trick is to inversely rotate both the cube and the point about the origin. This has the effect of resetting the cube's orientation to $$\textbf{r} = [0,0,0]$$ while not affecting the relative positions of the point and cube. We can then apply the equations from earlier to check if the rotated point lies inside the rotated cube.
+Going back to our problem of checking whether a point $$\textbf{v}$$ lies inside a rotated cube, a clever trick is to inversely rotate both the cube and the point about the origin. This has the effect of resetting the cube's orientation to $$\textbf{r} = [0,0,0]$$ while not affecting the relative positions of the point and cube. We can then apply the equations for the simple unrotated case.
 
-A pseudocode function for checking if a point lies inside a rotated cube would combine our previous pseudocode functions
+When the cube has orientation $$\textbf{r} = [r_x, r_y, r_z]$$ we use the `vectorRotate3DInverse` function from earlier
 
 ```lua
 function checkPointInsideCube(v, p, s, r)
@@ -167,7 +181,6 @@ $$
 \end{align*}
 $$
 
-When the cube has orientation $$\textbf{r} = [r_x, r_y, r_z]$$, we use the `vectorRotate3D` function from earlier, giving us the pseudocode function
 
 ```lua
 function getFacePoints(p, s, r, face)
@@ -190,32 +203,32 @@ function getFacePoints(p, s, r, face)
 
 ## Final solution
 
-Our final pseudocode solution combines everything we talked about
+We get the facepoints for each cube face and check if all of them are covered (or more accurately, if a single one is not covered, which is computationally easier)
 
 ```lua
-for each cube1 in cubes
-    for each face in cube1
-        f_points := getFacePoints(cube1.p, cube1.s, cube1.r, face)
-        covered := true
+function faceRemove(cubes)
+    for each cube1 in cubes
+        for each face in cube1
+            f_points := getFacePoints(cube1.p, cube1.s, cube1.r, face)
+            covered := true
 
-        for each face_point in face_points
-            once_covered := false
-            for each cube2 in cubes
-                if cube1 and cube2 are different
-                    if checkPointInsideCube(f_points, cube2.p, cube2.s, cube2.r) = true
+            for each face_point in face_points
+                once_covered := false
+                for each cube2 in cubes
+                    if cube1 and cube2 are same
+                        continue
+                    if checkPointInsideCube(f_points, cube2.p, cube2.s, cube2.r)
                         once_covered := true
                         break
-
-            if once_covered = false
-                covered := false
-                break
-
-        if covered = true
-            face is hidden
+                if not once_covered
+                    covered := false
+                    break
+            if covered
+                face is hidden and can be removed
 
 ```
 
-You can view the JavaScript implementation [here](https://github.com/Infinitifall/face-remove) or [run it in your browser](https://htmlpreview.github.io/?https://github.com/Infinitifall/face-remove/blob/main/index.html). Note that it expects the position of a cube to be the center of its bottom face (instead of its geometric center, which is what we assumed here) and the input/outputs look like this
+The final C implementation of `face-remove` is available [here](https://github.com/Infinitifall/face-remove). It expects the position of a cube to be the center of its bottom face (instead of the geometric center, which is what we assumed here) and the input/outputs look like this
 
 ```json
 {
