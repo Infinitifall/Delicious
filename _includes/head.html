@@ -40,9 +40,12 @@
   <meta property="og:url" content="{{ page.url }}">
   <link rel="canonical" href="{{ page.url }}">
 
-  <script src='{{ "/assets/scripts/theme-toggle.js" | relative_url }}'></script>
+  <script defer src='{{ "/assets/scripts/theme-toggle.js" | relative_url }}'></script>
 
   {% if page.latex %}
   {% include latex.html %}
+  {% endif %}
+
+  {% if page.comments %}
   {% endif %}
 </head>

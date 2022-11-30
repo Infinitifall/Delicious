@@ -5,14 +5,13 @@ url: "https://infinitifall.net" # the base hostname & protocol for your site, e.
 # permalink: /:categories/:year/:month/:day/:title:output_ext
 permalink: /:categories/:title:output_ext
 author: Infinitifall
+author_url: https://github.com/Infinitifall
 
 sass:
   sass_dir: _sass
 
-
-# plugins:
-#   - jekyll-feed
-#   - jekyll-seo-tag
+kramdown:
+  math_engine: katex
 
 
 exclude:
