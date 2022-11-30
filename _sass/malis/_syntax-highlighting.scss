@@ -3,16 +3,19 @@
   * Syntax highlighting styles
   */
   .highlight {
-    background: $bg-2;
+    background: $bg-highlight;
     // padding: 0.1em 0.3em;
-    border-radius: 0.4em;
+
+    pre {
+      border-radius: 0.4em;
+    }
 
     code {
-      color: $text-0 !important;
+      color: $base-text !important;
     }
 
     .highlighter-rouge & {
-      background: $bg-2;
+      background: $bg-highlight;
     }
 
     .rouge-table {
@@ -102,16 +105,19 @@
   * Syntax highlighting styles
   */
   .highlight {
-    background: $bg-2-dark;
+    background: $bg-highlight-dark;
     // padding: 0.1em 0.3em;
-    border-radius: 0.4em;
+    
+    pre {
+      border-radius: 0.4em;
+    }
 
     code {
-      color: $text-0-dark !important;
+      color: $base-text-dark !important;
     }
 
     .highlighter-rouge & {
-      background: $bg-2-dark;
+      background: $bg-highlight-dark;
     }
 
     .rouge-table {

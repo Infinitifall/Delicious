@@ -8,14 +8,44 @@
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 1em;
-    background-color: $bg-1;
+    background-color: $bg-0;
   }
 
   .wrapper2 {
-    max-width: MIN($content-width, $content-max-width);
+    .wrapper3 {
+      min-height: 1em;
+      max-width: MIN($content-width, $content-max-width);
+      margin-right: auto;
+      margin-left: auto;
+    }
+
     padding: 0 3vw;
-    margin-right: auto;
-    margin-left: auto;
+    border-bottom: 1px $bg-1 solid;
+    padding-bottom: 0.2em;
+
+    font-family: $navbar-font-family;
+    font-size: $base-font-size * 1.3;
+
+    a {
+      text-decoration: none;
+      color: $grey-text;
+    }
+
+    a:hover {
+      color: darken($grey-text-dark, 20%);
+    }
+  }
+
+  .wrapper4 {
+    .wrapper5 {
+      max-width: MIN($content-width, $content-max-width);
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    padding: 0 3vw;
+    border-top: 1px $bg-1 solid;
+    padding-top: 0.2em;
   }
 
 
@@ -23,19 +53,20 @@
   Styling for the page
   */
   .page-date {
-    color: $text-2;
+    color: $grey-text;
   }
 
   .page-tag {
-    font-size: $base-font-size;
-    margin-right: 0.5em;
-    color: $text-2 !important;
+    font-size: $tag-font-size;
+    color: $code-tag;
+    background-color: $bg-tag;
+    border: 1px darken($bg-tag, 10%) solid;
   }
 
   .page-title {
-    a { color: $text-1; }
-    a:hover { color: $text-1; }
-    a:visited { color: $text-1; }
+    a { color: $base-text; }
+    a:hover { color: $base-text; }
+    a:visited { color: $base-text; }
     text-align: center;
     margin-top: 0.5em;
     margin-bottom: 0.25em;
@@ -54,12 +85,8 @@
     margin-bottom: 2.5em;
   }
 
-  .post-element {
-    margin-bottom: 1em;
-  }
-
   .post-date {
-    color: $text-2;
+    color: $grey-text;
     user-select: none;
   }
 
@@ -70,14 +97,11 @@
     border-bottom: none;
   }
 
-
-  /*
-  Styling for tags
-  */
   .post-tag {
-    font-size: $base-font-size;
-    margin-right: 0.5em;
-    color: $text-2 !important;
+    font-size: $tag-font-size;
+    color: $code-tag;
+    background-color: $bg-tag;
+    border: 1px darken($bg-tag, 10%) solid;
   }
 
   .post-tags-list {
@@ -88,66 +112,54 @@
   Styling for tag page
   */
 
-  .tag-tag > a {
-    color: $text-1;
+  .tag-tag {
+    margin-bottom: 1em;
   }
 
   
   /*
   Styling for navbar
   */
-  .navbar {
-    margin-bottom: 3em;
+  .navbar-top {
     user-select: none;
+
+    .navbar-item {
+      margin-right: 1em;
+    }
+
+    .theme-toggle {
+      float: right;
+    }
+  }  
+
+  .navbar-details {
+    color: $grey-text;
+    user-select: none;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 2em;
+
+    .navbar-date-author {
+      margin-bottom: 0.5em;
+    }
+  }
+
+  .navbar-bottom {
+    min-height: 1em;
+    user-select: none;
+
+    .navbar-license {
+      color: $grey-text;
+      font-size: $small-font-size;
+    }
   }
 
   .navbar-home {
-    margin-bottom: 2em;
-    user-select: none;
-  }
-
-  .navbar2 {
-    text-align: center;
-    margin-bottom: 3em;
-    user-select: none;
-  }
-
-  .navbar3 {
-    margin-top: 3em;
-    min-height: 1em;
-    user-select: none;
-  }
-
-  .navbar3_1 {
-    color: $text-2;
-    font-size: $small-font-size;
-  }
-
-  .navbar3_2 {
-    float: right;
-  }
-
-  .navbar4 {
-    display: flex;
-    justify-content: right;
-  }
-
-  .navbar4_2 {
-    float: left;
-  }
-
-  .navbar5 {
-    margin-top: 1em;
-    min-height: 1em;
-    user-select: none;
+    margin-top: -1em;
   }
 
   .navbar-right {
     float: right;
-  }
-
-  .navbar-date {
-    margin-bottom: 0.5em;
   }
 
   .navbar-category-list {
@@ -160,19 +172,48 @@
   Wrapper around body
   */
   .wrapper {
-    max-width: MIN($content-width, $content-max-width);
+    max-width: MIN($content-width-dark, $content-max-width-dark);
     padding: 1em 3vw;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 1em;
-    background-color: $bg-1-dark;
+    background-color: $bg-0-dark;
   }
 
   .wrapper2 {
-    max-width: MIN($content-width, $content-max-width);
+    .wrapper3 {
+      max-width: MIN($content-width-dark, $content-max-width-dark);
+      margin-right: auto;
+      margin-left: auto;
+    }
+
     padding: 0 3vw;
-    margin-right: auto;
-    margin-left: auto;
+    border-bottom: 1px $bg-1-dark solid;
+    padding-bottom: 0.2em;
+
+    font-family: $navbar-font-family-dark;
+    font-size: $base-font-size-dark * 1.3;
+
+    a {
+      text-decoration: none;
+      color: $grey-text-dark;
+    }
+
+    a:hover {
+      color: lighten($grey-text-dark, 10%);
+    }
+  }
+
+  .wrapper4 {
+    .wrapper5 {
+      max-width: MIN($content-width-dark, $content-max-width-dark);
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    padding: 0 3vw;
+    border-top: 1px $bg-1-dark solid;
+    padding-top: 0.2em;
   }
 
 
@@ -180,19 +221,20 @@
   Styling for the page
   */
   .page-date {
-    color: $text-2-dark;
+    color: $grey-text-dark;
   }
 
   .page-tag {
-    font-size: $base-font-size;
-    margin-right: 0.5em;
-    color: $text-2 !important;
+    font-size: $tag-font-size-dark;
+    color: $code-tag-dark;
+    background-color: $bg-tag-dark;
+    border: 1px lighten($bg-tag-dark, 20%) solid;
   }
 
   .page-title {
-    a { color: $text-1-dark; }
-    a:hover { color: $text-1-dark; }
-    a:visited { color: $text-1-dark; }
+    a { color: $base-text-dark; }
+    a:hover { color: $base-text-dark; }
+    a:visited { color: $base-text-dark; }
     text-align: center;
     margin-top: 0.5em;
     margin-bottom: 0.25em;
@@ -211,12 +253,8 @@
     margin-bottom: 2.5em;
   }
 
-  .post-element {
-    margin-bottom: 1em;
-  }
-
   .post-date {
-    color: $text-2-dark;
+    color: $grey-text;
     user-select: none;
   }
 
@@ -227,14 +265,11 @@
     border-bottom: none;
   }
 
-
-  /*
-  Styling for tags
-  */
   .post-tag {
-    font-size: $base-font-size;
-    margin-right: 0.5em;
-    color: $text-2 !important;
+    font-size: $tag-font-size-dark;
+    color: $code-tag-dark;
+    background-color: $bg-tag-dark;
+    border: 1px lighten($bg-tag-dark, 20%) solid;
   }
 
   .post-tags-list {
@@ -245,66 +280,54 @@
   Styling for tag page
   */
 
-  .tag-tag > a {
-    color: $text-1-dark;
+  .tag-tag {
+    margin-bottom: 1em;
   }
 
-
+  
   /*
   Styling for navbar
   */
-  .navbar {
-    margin-bottom: 3em;
+  .navbar-top {
     user-select: none;
+
+    .navbar-item {
+      margin-right: 1em;
+    }
+
+    .theme-toggle {
+      float: right;
+    }
+  }  
+
+  .navbar-details {
+    color: $grey-text-dark;
+    user-select: none;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 2em;
+
+    .navbar-date-author {
+      margin-bottom: 0.5em;
+    }
+  }
+
+  .navbar-bottom {
+    min-height: 1em;
+    user-select: none;
+
+    .navbar-license {
+      color: $grey-text-dark;
+      font-size: $small-font-size-dark;
+    }
   }
 
   .navbar-home {
-    margin-bottom: 2em;
-    user-select: none;
-  }
-
-  .navbar2 {
-    text-align: center;
-    margin-bottom: 3em;
-    user-select: none;
-  }
-
-  .navbar3 {
-    margin-top: 3em;
-    min-height: 1em;
-    user-select: none;
-  }
-
-  .navbar3_1 {
-    color: $text-2-dark;
-    font-size: $small-font-size-dark;
-  }
-
-  .navbar3_2 {
-    float: right;
-  }
-
-  .navbar4 {
-    display: flex;
-    justify-content: right;
-  }
-
-  .navbar4_2 {
-    float: left;
-  }
-
-  .navbar5 {
-    margin-top: 1em;
-    min-height: 1em;
-    user-select: none;
+    margin-top: -1em;
   }
 
   .navbar-right {
     float: right;
-  }
-
-  .navbar-date {
-    margin-bottom: 0.5em;
   }
 
   .navbar-category-list {

@@ -2,38 +2,36 @@
 layout: default
 ---
 
-<div class="wrapper2">
-  <nav class="navbar5">
-    <span class="navbar4_2">
-      <a href="{{ '/' | relative_url }}">Go home</a>
-    </span>
-    <span class="navbar4">
-      {% include theme-toggle.html %}
-    </span>
-  </nav>
-</div>
 <div class="wrapper">
   {% if page.title %}
   <h1 class="page-title">{{ page.title }}</h1>
   {% endif %}
-  <nav class="navbar2">
-    <!-- <div class="navbar-date">
+  <nav class="navbar-details">
+    <div class="navbar-date-author">
       {% if page.updated %}
-      <span class="page-date">
-        {% assign date_format = "%d %B %Y" %}
-        {{ page.updated | date: date_format }}
-      </span>
+        Updated
       {% else if page.date %}
-      <span class="page-date">
-        {% assign date_format = "%d %B %Y" %}
-        {{ page.date | date: date_format }}
-      </span>
+        Published
       {% endif %}
-    </div> -->
-    <div class="navbar-tag-list">
+      by
+      {% if page.author and page.author_url %}
+        <a href="{{ page.author_url }}">{{ page.author }}</a>
+      {% else if site.author and site.author_url %}
+        <a href="{{ site.author_url }}">{{ site.author }}</a>
+      {% endif %}
+      on
+      {% if page.updated %}
+        {% assign date_format = "%d %B, %Y" %}
+        {{ page.updated | date: date_format }}
+      {% else if page.date %}
+        {% assign date_format = "%d %B, %Y" %}
+        {{ page.date | date: date_format }}
+      {% endif %}
+    </div>
+    <div>
       {% for tag in page.tags %}
-        <!-- <a href="{{ site.url }}/tags.html#{{ tag }}" class="page-tag">#{{ tag }}</a> -->
-        <span class="page-tag">#{{ tag }}</span>
+        <!-- <a href="{{ site.url }}/tags.html#{{ tag }}"><code class="post-tag">{{ tag }}</code></a> -->
+        <code class="page-tag">{{ tag }}</code>
       {% endfor %}
     </div>
   </nav>
@@ -41,13 +39,12 @@ layout: default
     {{ content }}
   </main>
 </div>
-<div class="wrapper2">
-  <nav class="navbar3">
-    <span class="navbar3_1">
-      Text under <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
-    </span>
-    <span class="navbar3_2">
-      <a href="#" >Go to top</a>
-    </span>
-  </nav>
+<div class="wrapper4">
+  <div class="wrapper5">
+    <nav class="navbar-bottom">
+      <span class="navbar-license">
+        Text under <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, Code under <a href="https://opensource.org/licenses/MIT">MIT</a> unless otherwise specified
+      </span>
+    </nav>
+  </div>
 </div>

@@ -7,11 +7,8 @@
     font-weight: $base-font-weight;
     letter-spacing: $base-letter-spacing;
 
-    color: $text-1;
+    color: $base-text;
     background-color: $bg-0;
-    // text-align: justify;
-    // background-image: url($bg-image);
-    // background-attachment: fixed;
   }
 
 
@@ -48,7 +45,7 @@
     display: block;
     text-align: center;
 
-    color: $text-2;
+    color: $grey-text;
   }
 
 
@@ -61,15 +58,21 @@
 
     margin-left: auto;
     margin-right: auto;
-
-    background-color: $bg-2;
     
-    border: 1px solid $text-2;
+    border: 1px solid $grey-text;
     border-collapse: collapse;
   }
 
-  tr:nth-child(even), thead {
-    background-color: $bg-2;
+  tr:nth-child(even) {
+    background-color: $bg-table;
+  }
+
+  tr:nth-child(odd) {
+    background-color: lighten($bg-table, 2.5%);
+  }
+
+  thead > tr {
+    background-color: darken($bg-table, 5%) !important;
   }
 
 
@@ -77,13 +80,13 @@
   Code and preformatted text
   */
   code {
-    color: $code-0;
+    color: $code-1;
     font-family: $code-font-family;
     font-size: $code-font-size;
-    background-color: $bg-2;
+    background-color: $bg-code;
     padding: 0.05em 0.2em;
     border-radius: 0.4em;
-    border: 1px darken($bg-2, 10%) solid;
+    border: 1px darken($bg-code, 10%) solid;
   }
 
   figure {
@@ -92,9 +95,10 @@
 
   pre {
     overflow-x: auto;
-    border: 1px darken($bg-2, 10%) solid;
+    border: 1px $bg-pre-border solid;
 
     > code {
+      color: $code-0;
       display: block;
       margin: 0 0;
       padding: 1em 1em;
@@ -108,10 +112,10 @@
   Quote
   */
   blockquote {
-    margin: 2em 1em;
+    margin: 2em 0em;
     padding: 0 1em;
-    border-left: 4px solid $text-2;
-    color: $text-2;
+    border-left: 4px solid $grey-text;
+    color: $grey-text;
   }
 
 
@@ -121,10 +125,11 @@
   h1, h2, h3, 
   h4, h5, h6 {
     margin-top: 2em;
-    color: $text-0;
+    color: $heading-text;
+    font-family: $heading-font-family;
   }
 
-  // h1, h2 { border-bottom: 1px solid $bg-2;}
+  // h1, h2 { border-bottom: 1px solid $bg-1;}
 
   h1 { font-size: 2em; }
   h2 { font-size: 1.6em; }
@@ -138,11 +143,11 @@
   Breaks
   */
   hr {
-    margin-top: 2em;
+    margin-top: 1em;
     margin-bottom: 1em;
     height: 1px;
-    color: $bg-2;
-    background-color: $bg-2;
+    color: $bg-1;
+    background-color: $bg-1;
     border-style: solid;
   }
 
@@ -164,15 +169,14 @@
   }
 
   textarea {
-    color: $text-1;
+    color: $base-text;
     font-size: $code-font-size;
-    background-color: $bg-2;
+    background-color: $bg-highlight;
     padding: 0.1em 0.3em;
     border-radius: 0.4em;
     border: none;
   }
 }
-
 
 .dark {
   body {
@@ -182,12 +186,10 @@
     font-weight: $base-font-weight-dark;
     letter-spacing: $base-letter-spacing-dark;
 
-    color: $text-1-dark;
+    color: $base-text-dark;
     background-color: $bg-0-dark;
-    // text-align: justify;
-    // background-image: url($bg-image-dark);
-    // background-attachment: fixed;
   }
+
 
   /*
   Links
@@ -222,7 +224,7 @@
     display: block;
     text-align: center;
 
-    color: $text-2-dark;
+    color: $grey-text-dark;
   }
 
 
@@ -236,14 +238,20 @@
     margin-left: auto;
     margin-right: auto;
     
-    background-color: $bg-2-dark;
-
-    border: 1px solid $text-2-dark;
+    border: 1px solid $grey-text-dark;
     border-collapse: collapse;
   }
 
-  tr:nth-child(even), thead {
-    background-color: $bg-2-dark;
+  tr:nth-child(even) {
+    background-color: lighten($bg-table-dark, 5%);
+  }
+
+  tr:nth-child(odd) {
+    background-color: $bg-table-dark;
+  }
+
+  thead > tr {
+    background-color: darken($bg-table-dark, 5%) !important;
   }
 
 
@@ -251,13 +259,13 @@
   Code and preformatted text
   */
   code {
-    color: $code-0-dark;
+    color: $code-1-dark;
     font-family: $code-font-family-dark;
     font-size: $code-font-size-dark;
-    background-color: $bg-2-dark;
+    background-color: $bg-code-dark;
     padding: 0.05em 0.2em;
     border-radius: 0.4em;
-    border: 1px lighten($bg-2-dark, 20%) solid;
+    border: 1px lighten($bg-code-dark, 20%) solid;
   }
 
   figure {
@@ -266,9 +274,10 @@
 
   pre {
     overflow-x: auto;
-    border: 1px lighten($bg-2-dark, 20%) solid;
+    border: 1px $bg-pre-border-dark solid;
 
     > code {
+      color: $code-0-dark;
       display: block;
       margin: 0 0;
       padding: 1em 1em;
@@ -282,10 +291,10 @@
   Quote
   */
   blockquote {
-    margin: 2em 1em;
+    margin: 2em 0em;
     padding: 0 1em;
-    border-left: 4px solid $text-2-dark;
-    color: $text-2-dark;
+    border-left: 4px solid $grey-text-dark;
+    color: $grey-text-dark;
   }
 
 
@@ -295,10 +304,11 @@
   h1, h2, h3, 
   h4, h5, h6 {
     margin-top: 2em;
-    color: $text-0-dark;
+    color: $heading-text-dark;
+    font-family: $heading-font-family-dark;
   }
 
-  // h1, h2 { border-bottom: 1px solid $bg-2-dark;}
+  // h1, h2 { border-bottom: 1px solid $bg-1-dark;}
 
   h1 { font-size: 2em; }
   h2 { font-size: 1.6em; }
@@ -312,18 +322,18 @@
   Breaks
   */
   hr {
-    margin-top: 2em;
+    margin-top: 1em;
     margin-bottom: 1em;
     height: 1px;
-    color: $bg-2-dark;
-    background-color: $bg-2-dark;
+    color: $bg-1-dark;
+    background-color: $bg-1-dark;
     border-style: solid;
   }
 
   button {
     background-color: $button-1-bg-dark;
-    font-family: $base-font-family;
-    font-size: $small-font-size;
+    font-family: $base-font-family-dark;
+    font-size: $small-font-size-dark;
     padding: 0.2em 0.5em;
     padding-top: 0.4em;
     color: $button-1-dark;
@@ -338,9 +348,9 @@
   }
 
   textarea {
-    color: $text-1-dark;
+    color: $base-text-dark;
     font-size: $code-font-size-dark;
-    background-color: $bg-2-dark;
+    background-color: $bg-highlight-dark;
     padding: 0.1em 0.3em;
     border-radius: 0.4em;
     border: none;

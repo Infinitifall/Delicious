@@ -25,11 +25,14 @@ function apply_theme() {
     } else {
         var theme_obj = JSON.parse(localStorage.getItem('theme'));
         var root = document.getElementById('root');
+        var theme_toggle = document.getElementById('theme-toggle');
         
         if (theme_obj['theme'] == 'dark') {
             root.className = 'dark';
+            theme_toggle.innerHTML = '☀️';
         } else {
             root.className = 'light';
+            theme_toggle.innerHTML = '🌙';
         }
     }
 }

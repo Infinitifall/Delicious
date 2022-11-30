@@ -2,23 +2,16 @@
 layout: default
 ---
 
-<div class="wrapper2">
-  <nav class="navbar5">
-    <span class="navbar4">
-      {% include theme-toggle.html %}
-    </span>
-  </nav>
+<div class="wrapper">
   {% if page.title %}
   <h1 class="page-title">{{ page.title }}</h1>
   {% endif %}
-</div>
-<div class="wrapper">
   <main>
     {{ content }}
     {% if true %}
     <h1>Articles</h1>
-    <nav class="navbar-home">
-      <!-- <span>
+    <!-- <nav class="navbar-home">
+      <span>
         {% for category in site.categories %}  
           <a class="navbar-category-list" href="{{ category[0] | relative_url }}.html">{{ category[0] | escape }}</a>
         {% endfor %}
@@ -28,8 +21,8 @@ layout: default
         <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
         {% endif %}
         <a href="{{ '/tags.html' | relative_url }}">Tags</a>
-      </span> -->
-    </nav>
+      </span>
+    </nav> -->
     <div>
       <ul class="post-list">
         {% for post in site.posts %}
