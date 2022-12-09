@@ -10,8 +10,13 @@ author_url: https://github.com/Infinitifall
 sass:
   sass_dir: _sass
 
+
+# comment out the two lines below
+# and uncomment out the lines in latex.html
+# to use JS instead of static latex generation
 kramdown:
   math_engine: katex
+
 
 plugins:
 - jekyll-toc

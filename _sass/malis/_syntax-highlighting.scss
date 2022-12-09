@@ -5,10 +5,7 @@
   .highlight {
     background: $bg-highlight;
     // padding: 0.1em 0.3em;
-
-    pre {
-      border-radius: 0.4em;
-    }
+    border-radius: 0.5em;
 
     code {
       color: $base-text !important;
@@ -107,10 +104,7 @@
   .highlight {
     background: $bg-highlight-dark;
     // padding: 0.1em 0.3em;
-    
-    pre {
-      border-radius: 0.4em;
-    }
+    border-radius: 0.5em;
 
     code {
       color: $base-text-dark !important;
