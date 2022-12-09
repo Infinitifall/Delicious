@@ -2,11 +2,51 @@
 layout: default
 ---
 
+<div class="navbar-details">
+  <div>
+    <b>Details</b>
+    <ul>
+      <li>
+      {% if page.updated %}
+        {% assign date_format = "%d %B, %Y" %}
+        Updated on {{ page.updated | date: date_format }}
+      {% else if page.date %}
+        {% assign date_format = "%d %B, %Y" %}
+        Published on {{ page.date | date: date_format }}
+      {% endif %}
+      </li>
+      <li>
+        Authored by 
+        {% if page.author and page.author_url %}
+          <a href="{{ page.author_url }}">{{ page.author }}</a>
+        {% else if site.author and site.author_url %}
+          <a href="{{ site.author_url }}">{{ site.author }}</a>
+        {% endif %}
+      </li>
+      <li>
+        Tagged
+        {% for tag in page.tags %}
+          <!-- <a href="{{ site.url }}/tags.html#{{ tag }}"><code class="post-tag">{{ tag }}</code></a> -->
+          <code class="page-tag">{{ tag }}</code>
+        {% endfor %}
+      </li>
+    </ul>
+  </div>
+  <div class="post-toc">
+    <b>Contents</b>
+    {% if page.title %}
+    <ul>
+      <li><a href="#">{{ page.title }}</a></li>
+    </ul>
+    {% endif %}
+    {% include toc.html %}
+  </div>
+</div>
 <div class="wrapper">
   {% if page.title %}
   <h1 class="page-title">{{ page.title }}</h1>
   {% endif %}
-  <nav class="navbar-details">
+  <div class="navbar-details-inline">
     <div class="navbar-date-author">
       {% if page.updated %}
         Updated
@@ -34,16 +74,25 @@ layout: default
         <code class="page-tag">{{ tag }}</code>
       {% endfor %}
     </div>
-  </nav>
+  </div>
+  <div class="post-toc-inline">
+    <b>Contents</b>
+    {% if page.title %}
+    <ul>
+      <li><a href="#">{{ page.title }}</a></li>
+    </ul>
+    {% endif %}
+    {% include toc.html %}
+  </div>
   <main class="main-post">
     {{ content }}
   </main>
 </div>
-<div class="wrapper4">
-  <div class="wrapper5">
+<div class="wrapper-bottom">
+  <div class="wrapper-bottom-2">
     <nav class="navbar-bottom">
       <span class="navbar-license">
-        Text under <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, Code under <a href="https://opensource.org/licenses/MIT">MIT</a> unless otherwise specified
+        Text under <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, Code under <a href="https://opensource.org/licenses/MIT">MIT</a>, unless otherwise specified
       </span>
     </nav>
   </div>

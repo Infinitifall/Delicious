@@ -11,3 +11,4 @@ gem "jekyll"
 gem "webrick"
 
 gem "kramdown-math-katex"
+gem 'jekyll-toc'

@@ -13,6 +13,9 @@ sass:
 kramdown:
   math_engine: katex
 
+plugins:
+- jekyll-toc
+
 
 exclude:
   - .sass-cache/

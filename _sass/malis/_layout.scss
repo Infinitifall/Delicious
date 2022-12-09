@@ -6,13 +6,17 @@
     max-width: MIN($content-width, $content-max-width);
     padding: 1em 3vw;
     margin-right: auto;
-    margin-left: auto;
+    margin-left: 20em;
     margin-bottom: 1em;
     background-color: $bg-0;
+
+    @media only screen and (max-width: 1100px) {
+      margin-left: auto;
+    }
   }
 
-  .wrapper2 {
-    .wrapper3 {
+  .wrapper-top {
+    .wrapper-top-2 {
       min-height: 1em;
       max-width: MIN($content-width, $content-max-width);
       margin-right: auto;
@@ -36,8 +40,8 @@
     }
   }
 
-  .wrapper4 {
-    .wrapper5 {
+  .wrapper-bottom {
+    .wrapper-bottom-2 {
       max-width: MIN($content-width, $content-max-width);
       margin-right: auto;
       margin-left: auto;
@@ -46,6 +50,15 @@
     padding: 0 3vw;
     border-top: 1px $bg-1 solid;
     padding-top: 0.2em;
+  }
+
+  .wrapper-gallery {
+    max-width: MIN($gallery-width, $content-max-width);
+    padding: 1em 3vw;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 1em;
+    background-color: $bg-0;
   }
 
 
@@ -69,8 +82,12 @@
     a:visited { color: $base-text; }
     text-align: center;
     margin-top: 0.5em;
-    margin-bottom: 0.25em;
+    margin-bottom: 1.5em;
     font-size: 2.3em;
+
+    @media only screen and (max-width: 1100px) {
+      margin-bottom: 0.25em;
+    }
   }
 
 
@@ -108,6 +125,40 @@
     user-select: none;
   }
 
+  .post-toc {
+    left: 0;
+    margin-top: 2em;
+    margin-left: 1em;
+    position: fixed;
+    border: 1px solid $bg-1;
+    padding: 1em 1em;
+    width: 300px;
+
+    a {
+      color: $grey-text;
+    }
+
+    @media only screen and (max-width: 1100px) {
+      display: none;
+    }
+  }
+
+  .post-toc-inline {
+    display: none;
+
+    // @media only screen and (max-width: 1100px) {
+    //   display: block;
+    //   border: 1px solid $bg-1;
+    //   padding: 1em 1em;
+    //   max-width: MIN($content-width, $content-max-width);
+    //   width: 400px;
+
+    //   a {
+    //     color: $grey-text;
+    //   }
+    // }
+  }
+
   /*
   Styling for tag page
   */
@@ -123,24 +174,56 @@
   .navbar-top {
     user-select: none;
 
+    display: flex;
+    overflow: scroll;
+    justify-content: center;
+
+    @media screen and (max-width: 600px) {
+      justify-content: left;
+      display: block;
+    }
+
     .navbar-item {
       margin-right: 1em;
     }
 
-    .theme-toggle {
-      float: right;
-    }
-  }  
+    // .theme-toggle {
+    //   float: right;
+    // }
+  }
 
   .navbar-details {
-    color: $grey-text;
-    user-select: none;
-    text-align: center;
-    margin-top: 1em;
-    margin-bottom: 2em;
+    left: 0;
+    margin-top: 2em;
+    margin-left: 1em;
+    position: fixed;
+    border: 1px solid $bg-1;
+    padding: 1em 1em;
+    width: 300px;
 
-    .navbar-date-author {
-      margin-bottom: 0.5em;
+    a {
+      color: $grey-text;
+    }
+
+    @media only screen and (max-width: 1100px) {
+      display: none;
+    }
+  }
+
+  .navbar-details-inline {
+    display: none;
+
+    @media only screen and (max-width: 1100px) {
+      display: block;
+      color: $grey-text;
+      user-select: none;
+      text-align: center;
+      margin-top: 1em;
+      margin-bottom: 2em;
+
+      .navbar-date-author {
+        margin-bottom: 0.5em;
+      }
     }
   }
 
@@ -175,13 +258,17 @@
     max-width: MIN($content-width-dark, $content-max-width-dark);
     padding: 1em 3vw;
     margin-right: auto;
-    margin-left: auto;
+    margin-left: 20em;
     margin-bottom: 1em;
     background-color: $bg-0-dark;
+
+    @media only screen and (max-width: 1100px) {
+      margin-left: auto;
+    }
   }
 
-  .wrapper2 {
-    .wrapper3 {
+  .wrapper-top {
+    .wrapper-top-2 {
       max-width: MIN($content-width-dark, $content-max-width-dark);
       margin-right: auto;
       margin-left: auto;
@@ -204,8 +291,8 @@
     }
   }
 
-  .wrapper4 {
-    .wrapper5 {
+  .wrapper-bottom {
+    .wrapper-bottom-2 {
       max-width: MIN($content-width-dark, $content-max-width-dark);
       margin-right: auto;
       margin-left: auto;
@@ -214,6 +301,15 @@
     padding: 0 3vw;
     border-top: 1px $bg-1-dark solid;
     padding-top: 0.2em;
+  }
+
+  .wrapper-gallery {
+    max-width: MIN($gallery-width-dark, $content-max-width-dark);
+    padding: 1em 3vw;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 1em;
+    background-color: $bg-0-dark;
   }
 
 
@@ -237,8 +333,12 @@
     a:visited { color: $base-text-dark; }
     text-align: center;
     margin-top: 0.5em;
-    margin-bottom: 0.25em;
+    margin-bottom: 1.5em;
     font-size: 2.3em;
+
+    @media only screen and (max-width: 1100px) {
+      margin-bottom: 0.25em;
+    }
   }
 
 
@@ -276,6 +376,40 @@
     user-select: none;
   }
 
+  .post-toc {
+    left: 0;
+    margin-top: 2em;
+    margin-left: 1em;
+    position: fixed;
+    border: 1px solid $bg-1-dark;
+    padding: 1em 1em;
+    width: 300px;
+
+    a {
+      color: $grey-text-dark;
+    }
+
+    @media only screen and (max-width: 1100px) {
+      display: none;
+    }
+  }
+
+  .post-toc-inline {
+    display: none;
+
+    // @media only screen and (max-width: 1100px) {
+    //   display: block;
+    //   border: 1px solid $bg-1-dark;
+    //   padding: 1em 1em;
+    //   max-width: MIN($content-width-dark, $content-max-width-dark);
+    //   width: 400px;
+
+    //   a {
+    //     color: $grey-text-dark;
+    //   }
+    // }
+  }
+
   /*
   Styling for tag page
   */
@@ -291,24 +425,56 @@
   .navbar-top {
     user-select: none;
 
+    display: flex;
+    overflow: scroll;
+    justify-content: center;
+
+    @media screen and (max-width: 600px) {
+      display: block;
+      justify-content: left;
+    }
+
     .navbar-item {
       margin-right: 1em;
     }
 
-    .theme-toggle {
-      float: right;
-    }
-  }  
+    // .theme-toggle {
+    //   float: right;
+    // }
+  }
 
   .navbar-details {
-    color: $grey-text-dark;
-    user-select: none;
-    text-align: center;
-    margin-top: 1em;
-    margin-bottom: 2em;
+    left: 0;
+    margin-top: 2em;
+    margin-left: 1em;
+    position: fixed;
+    border: 1px solid $bg-1-dark;
+    padding: 1em 1em;
+    width: 300px;
 
-    .navbar-date-author {
-      margin-bottom: 0.5em;
+    a {
+      color: $grey-text-dark;
+    }
+
+    @media only screen and (max-width: 1100px) {
+      display: none;
+    }
+  }
+
+  .navbar-details-inline {
+    display: none;
+
+    @media only screen and (max-width: 1100px) {
+      display: block;
+      color: $grey-text-dark;
+      user-select: none;
+      text-align: center;
+      margin-top: 1em;
+      margin-bottom: 2em;
+
+      .navbar-date-author {
+        margin-bottom: 0.5em;
+      }
     }
   }
 

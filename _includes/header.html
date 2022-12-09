@@ -1,20 +1,26 @@
 <header>
-  <div class="wrapper2">
-    <div class="wrapper3">
-      <nav class="navbar-top">
+  <div class="wrapper-top">
+    <div class="wrapper-top-2">
+      <span class="navbar-top">
         <span class="navbar-item">
           <a href="{{ '/' | relative_url }}">Home</a>
         </span>
         <span class="navbar-item">
-          <a href="https://github.com/Infinitifall">Projects</a>
+          <a href="{{ '/gallery.html' | relative_url }}">Gallery</a>
         </span>
         <span class="navbar-item">
-          <a href="https://irc.infinitifall.net/">Lounge</a>
+          <a href="https://github.com/Infinitifall">Projects</a>
+        </span>
+        <!-- <span class="navbar-item">
+          <a href="{{ '/curated/index.html' | relative_url }}">Curated</a>
+        </span> -->
+        <span class="navbar-item">
+          <a href="https://irc.infinitifall.net/">IRC</a>
         </span>
         <span class="theme-toggle">
           {% include theme-toggle.html %}
         </span>
-      </nav>
+      </span>
     </div>
   </div>
 </header>

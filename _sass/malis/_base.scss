@@ -211,6 +211,11 @@
     margin-right: auto;
 
     max-width: MIN($image-width-dark, $content-max-width-dark);
+    filter: brightness(80%);
+  }
+
+  img:hover {
+    filter: brightness(100%);
   }
 
 
