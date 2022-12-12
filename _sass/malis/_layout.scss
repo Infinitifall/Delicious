@@ -16,13 +16,6 @@
   }
 
   .wrapper-top {
-    .wrapper-top-2 {
-      min-height: 1em;
-      max-width: MIN($content-width, $content-max-width);
-      margin-right: auto;
-      margin-left: auto;
-    }
-
     padding: 0.2em 0;
     border-bottom: 1px $bg-1 solid;
     padding-bottom: 0.2em;
@@ -287,12 +280,6 @@
   }
 
   .wrapper-top {
-    .wrapper-top-2 {
-      max-width: MIN($content-width-dark, $content-max-width-dark);
-      margin-right: auto;
-      margin-left: auto;
-    }
-
     padding: 0.2em 0;
     // border-bottom: 1px $bg-1-dark solid;
     border-bottom: 1px transparent solid;
@@ -330,7 +317,8 @@
     }
 
     padding: 0 3vw;
-    border-top: 1px $bg-1-dark solid;
+    border-top: 1px transparent solid;
+    background: $bg-highlight-dark;
     padding-top: 0.2em;
   }
 
