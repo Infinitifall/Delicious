@@ -1,14 +1,14 @@
 <head>
   <meta charset="utf-8">
   
-  <link rel="stylesheet" href='{{ "/assets/main.css" | relative_url }}'>
+  <link rel="stylesheet" type="text/css" href='{{ "/assets/main.css?v=" | append: site.css_js_version | relative_url }}'>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="website">
 
   <link rel="icon" type="image/x-icon" href='{{ "assets/images/favicon.webp" | relative_url }}'>
-  <meta property="og:image" content='{{ "assets/images/favicon.webp" | relative_url }}'>
+  <meta property="og:image" content='{{ "assets/images/logo.jpeg" | relative_url }}'>
 
   {% if page.title %}
   <title>{{ page.title }}</title>
@@ -40,7 +40,7 @@
   <meta property="og:url" content="{{ page.url }}">
   <link rel="canonical" href="{{ page.url }}">
 
-  <script defer src='{{ "/assets/scripts/theme-toggle.js" | relative_url }}'></script>
+  <script defer src='{{ "/assets/scripts/theme-toggle.js?v=" | append: site.css_js_version | relative_url }}'></script>
 
   {% if page.latex %}
   {% include latex.html %}

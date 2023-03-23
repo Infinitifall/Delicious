@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="wrapper">
+<div class="wrapper-home">
   {% if page.title %}
   <h1 class="page-title">{{ page.title }}</h1>
   {% endif %}
@@ -10,7 +10,7 @@ layout: default
     {{ content }}
     {% if true %}
     <h1>Articles</h1>
-    <!-- <nav class="navbar-home">
+    <nav class="navbar-home">
       <span>
         {% for category in site.categories %}  
           <a class="navbar-category-list" href="{{ category[0] | relative_url }}.html">{{ category[0] | escape }}</a>
@@ -22,7 +22,7 @@ layout: default
         {% endif %}
         <a href="{{ '/tags.html' | relative_url }}">Tags</a>
       </span>
-    </nav> -->
+    </nav>
     <div>
       <ul class="post-list">
         {% for post in site.posts %}
