@@ -1,8 +1,8 @@
 function toggle_theme() {
-    var theme_obj;
+    let theme_obj;
 
     if (localStorage.getItem('theme') === null) {
-        theme_obj = {'theme': 'light'};
+        theme_obj = {'theme': 'dark'};
 
     } else {
         theme_obj = JSON.parse(localStorage.getItem('theme'));
@@ -19,13 +19,14 @@ function toggle_theme() {
 }
 
 function apply_theme() {
+    let root = document.getElementById('root');
+
     if (localStorage.getItem('theme') === null) {
         root.className = 'light';
 
     } else {
-        var theme_obj = JSON.parse(localStorage.getItem('theme'));
-        var root = document.getElementById('root');
-        var theme_toggle = document.getElementById('theme-toggle');
+        let theme_obj = JSON.parse(localStorage.getItem('theme'));
+        let theme_toggle = document.getElementById('theme-toggle');
         
         if (theme_obj['theme'] == 'dark') {
             root.className = 'dark';
