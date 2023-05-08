@@ -4,13 +4,15 @@ layout: default
 
 <div class="wrapper-home">
   {% if page.title %}
-  <h1 class="page-title">{{ page.title }}</h1>
+  <h1 class="home-title page-title">{{ page.title }}</h1>
   {% endif %}
   <main>
-    {{ content }}
+    <div class="home-content">
+      {{ content }}
+    </div>
     {% if true %}
-    <h1>Articles</h1>
-    <nav class="navbar-home">
+    <h1 class="home-title">Articles</h1>
+    <!-- <nav class="navbar-home">
       <span>
         {% for category in site.categories %}  
           <a class="navbar-category-list" href="{{ category[0] | relative_url }}.html">{{ category[0] | escape }}</a>
@@ -22,10 +24,11 @@ layout: default
         {% endif %}
         <a href="{{ '/tags.html' | relative_url }}">Tags</a>
       </span>
-    </nav>
+    </nav> -->
     <div>
       <ul class="post-list">
-        {% for post in site.posts %}
+        {% assign sorted_posts = site.posts | sort: "updated", "last" | reverse %}
+        {% for post in sorted_posts %}
           {% include post-list.html %}
         {% endfor %}
       </ul>
