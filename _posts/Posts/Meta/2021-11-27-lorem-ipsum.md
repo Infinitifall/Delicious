@@ -2,7 +2,8 @@
 layout: post
 title: "Lorem ipsum dolor sit amet"
 excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper eget magna non luctus. Cras iaculis odio non nibh egestas feugiat."
-date: 2022-12-11 15:30:00 +1100
+date: 2021-11-27 00:00:00 +1100
+updated: 2022-12-11 15:30:00 +1100
 tags: lorem-ipsum de-Finibus
 author: Your-Username-Here
 author_url: https://www.google.com/
