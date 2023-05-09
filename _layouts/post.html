@@ -32,6 +32,7 @@ layout: default
       </li>
     </ul>
   </div>
+  {% if page.toc %}
   <div class="post-toc">
     <b>Contents</b>
     {% if page.title %}
@@ -41,6 +42,7 @@ layout: default
     {% endif %}
     {% include toc.html %}
   </div>
+  {% endif %}
 </div>
 <div class="wrapper">
   {% if page.title %}
@@ -75,6 +77,7 @@ layout: default
       {% endfor %}
     </div>
   </div>
+  {% if page.toc and false %}
   <div class="post-toc-inline">
     <b>Contents</b>
     {% if page.title %}
@@ -84,6 +87,7 @@ layout: default
     {% endif %}
     {% include toc.html %}
   </div>
+  {% endif %}
   <main class="main-post">
     {{ content }}
   </main>

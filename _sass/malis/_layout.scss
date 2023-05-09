@@ -4,7 +4,7 @@
   */
   .wrapper {
     max-width: MIN($content-width, $content-max-width);
-    min-height: 85vh;
+    min-height: 100vh;
     padding: 1em 3vw;
     margin-right: auto;
     margin-left: calc(50vw - #{MIN($content-width, $content-max-width)} / 2);
@@ -237,19 +237,19 @@
   .post-toc-inline {
     display: none;
 
-    // @media only screen and (max-width: 1366px) {
-    //   display: block;
-    //   border: 1px solid $bg-1;
-    //   border-radius: 0.5em;
-    //   padding: 1em 1em;
-    //   margin-bottom: 2em;
-    //   max-width: MIN($content-width, $content-max-width);
-    //   width: $details-width;
+    @media only screen and (max-width: 1366px) {
+      display: block;
+      border: 1px solid $bg-1;
+      border-radius: 0.5em;
+      padding: 1em 1em;
+      margin-bottom: 2em;
+      max-width: MIN($content-width, $content-max-width);
+      width: $details-width;
 
-    //   a {
-    //     color: $grey-text;
-    //   }
-    // }
+      a {
+        color: $grey-text;
+      }
+    }
   }
 
   .navbar-bottom {
@@ -282,7 +282,7 @@
   */
   .wrapper {
     max-width: MIN($content-width-dark, $content-max-width-dark);
-    min-height: 85vh;
+    min-height: 100vh;
     padding: 1em 3vw;
     margin-right: auto;
     margin-left: calc(50vw - #{MIN($content-width, $content-max-width)} / 2);
@@ -296,8 +296,7 @@
 
   .wrapper-top {
     padding: 0.2em 0;
-    // border-bottom: 1px $bg-1-dark solid;
-    border-bottom: 1px transparent solid;
+    border-bottom: 1px lighten($bg-highlight-dark, 10%) solid;
     padding-bottom: 0.2em;
 
     font-family: $navbar-font-family-dark;
@@ -305,7 +304,6 @@
 
     position: fixed;
     width: 100%;
-    // background-color: $bg-0-dark;
     background-color: $bg-highlight-dark;
     top: 0;
     z-index: 1;
@@ -521,20 +519,20 @@
   .post-toc-inline {
     display: none;
 
-    // @media only screen and (max-width: 1366px) {
-    //   display: block;
-    //   border: 1px transparent solid;
-    //   background-color: $bg-highlight-dark;
-    //   border-radius: 0.5em;
-    //   padding: 1em 1em;
-    //   margin-bottom: 2em;
-    //   max-width: MIN($content-width-dark, $content-max-width-dark);
-    //   width: $details-width;
+    @media only screen and (max-width: 1366px) {
+      display: block;
+      border: 1px transparent solid;
+      background-color: $bg-highlight-dark;
+      border-radius: 0.5em;
+      padding: 1em 1em;
+      margin-bottom: 2em;
+      max-width: MIN($content-width-dark, $content-max-width-dark);
+      width: $details-width;
 
-    //   a {
-    //     color: $grey-text-dark;
-    //   }
-    // }
+      a {
+        color: $grey-text-dark;
+      }
+    }
   }
 
   .navbar-bottom {
