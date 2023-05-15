@@ -2,15 +2,18 @@
 layout: default
 ---
 
+{%- assign updatedEpoch = page.updated | date: "%s" | plus: 0 -%}
+{%- assign publishedEpoch = page.date | date: "%s" | plus: 0 -%}
+
 <div class="post-details">
   <div class="post-details-inner">
     <b>Details</b>
     <ul>
       <li>
-      {% if page.updated %}
+      {% if updatedEpoch > publishedEpoch %}
         {% assign date_format = "%d %B, %Y" %}
         Updated on {{ page.updated | date: date_format }}
-      {% else if page.date %}
+      {% else %}
         {% assign date_format = "%d %B, %Y" %}
         Published on {{ page.date | date: date_format }}
       {% endif %}
@@ -19,7 +22,7 @@ layout: default
         Authored by 
         {% if page.author and page.author_url %}
           <a href="{{ page.author_url }}">{{ page.author }}</a>
-        {% else if site.author and site.author_url %}
+        {% else %}
           <a href="{{ site.author_url }}">{{ site.author }}</a>
         {% endif %}
       </li>
@@ -50,22 +53,22 @@ layout: default
   {% endif %}
   <div class="post-details-inline">
     <div class="navbar-date-author">
-      {% if page.updated %}
+      {% if updatedEpoch > publishedEpoch %}
         Updated
-      {% else if page.date %}
+      {% else %}
         Published
       {% endif %}
       by
       {% if page.author and page.author_url %}
         <a href="{{ page.author_url }}">{{ page.author }}</a>
-      {% else if site.author and site.author_url %}
+      {% else %}
         <a href="{{ site.author_url }}">{{ site.author }}</a>
       {% endif %}
       on
-      {% if page.updated %}
+      {% if updatedEpoch > publishedEpoch %}
         {% assign date_format = "%d %B, %Y" %}
         {{ page.updated | date: date_format }}
-      {% else if page.date %}
+      {% else %}
         {% assign date_format = "%d %B, %Y" %}
         {{ page.date | date: date_format }}
       {% endif %}

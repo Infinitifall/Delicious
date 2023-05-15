@@ -84,6 +84,7 @@
     color: $code-1;
     font-family: $code-font-family;
     font-size: $code-font-size;
+    font-weight: $code-font-weight;
     background-color: $bg-code;
     padding: 0.05em 0.2em;
     border-radius: 0.4em;
@@ -99,7 +100,7 @@
     border: 1px $bg-pre-border solid;
 
     > code {
-      color: $code-0;
+      color: $code-1;
       display: block;
       margin: 0 0;
       padding: 1em 1em;
@@ -114,9 +115,18 @@
   */
   blockquote {
     margin: 2em 0em;
-    padding: 0 1em;
-    border-left: 4px solid $grey-text;
+    padding: 0.5em 1em;
+    border-left: 4px solid darken($bg-quote, 50%);
     color: $grey-text;
+    background-color: $bg-quote;
+
+    p:first-child {
+      margin-top: 0;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
   }
 
 
@@ -125,20 +135,21 @@
   */
   h1, h2, h3, 
   h4, h5, h6 {
-    margin-top: 2em;
+    margin-top: 1.5em;
+    margin-bottom: 0;
     color: $heading-text;
     font-family: $heading-font-family;
-    scroll-margin-top: 3rem;
+    padding-bottom: 0.1em;
   }
 
-  // h1, h2 { border-bottom: 1px solid $bg-1;}
+  h1, h2 { border-bottom: 1px solid $bg-1;}
 
-  h1 { font-size: 2em; }
-  h2 { font-size: 1.6em; }
-  h3 { font-size: 1.2em; }
-  h4 { font-size: 1em; }
-  h5 { font-size: 0.8em; }
-  h6 { font-size: 0.6em; }
+  h1 { font-weight: $heading-font-weight; font-size: 2em; }
+  h2 { font-weight: $heading-font-weight; font-size: 1.6em; }
+  h3 { font-weight: $heading-font-weight; font-size: 1.2em; }
+  h4 { font-weight: $heading-font-weight; font-size: 1em; }
+  h5 { font-weight: $heading-font-weight; font-size: 0.8em; }
+  h6 { font-weight: $heading-font-weight; font-size: 0.6em; }
 
 
   /*
@@ -170,6 +181,11 @@
     background-color: darken($button-1-bg, 5%);
   }
 
+  button:active {
+    background-color: $base-text;
+    color: $bg-0;
+  }
+
   textarea {
     color: $base-text;
     font-size: $code-font-size;
@@ -180,10 +196,15 @@
   }
 
   ::-webkit-scrollbar { width: 6px; height: 6px; }
-  ::-webkit-scrollbar-track { background: #ddd; }
-  ::-webkit-scrollbar-thumb { background: #777; }
+  ::-webkit-scrollbar-track { background: #eee; }
+  ::-webkit-scrollbar-thumb { background: #ccc; }
   ::-webkit-scrollbar-thumb:hover { background: #666; }
   ::-webkit-scrollbar-corner { background: rgba(0,0,0,0); }
+
+  ::selection {
+    color: $bg-0;
+    background: $base-text;
+  }
 }
 
 .dark {
@@ -273,6 +294,7 @@
     color: $code-1-dark;
     font-family: $code-font-family-dark;
     font-size: $code-font-size-dark;
+    font-weight: $code-font-weight-dark;
     background-color: $bg-code-dark;
     padding: 0.05em 0.2em;
     border-radius: 0.4em;
@@ -288,7 +310,7 @@
     border: 1px transparent solid;
 
     > code {
-      color: $code-0-dark;
+      color: $code-1-dark;
       display: block;
       margin: 0 0;
       padding: 1em 1em;
@@ -303,9 +325,18 @@
   */
   blockquote {
     margin: 2em 0em;
-    padding: 0 1em;
-    border-left: 4px solid $grey-text-dark;
+    padding: 0.5em 1em;
+    border-left: 4px solid darken($bg-quote-dark, 50%);
     color: $grey-text-dark;
+    background-color: $bg-quote-dark;
+
+    p:first-child {
+      margin-top: 0;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
   }
 
 
@@ -314,20 +345,21 @@
   */
   h1, h2, h3, 
   h4, h5, h6 {
-    margin-top: 2em;
+    margin-top: 1.5em;
+    margin-bottom: 0;
     color: $heading-text-dark;
     font-family: $heading-font-family-dark;
-    scroll-margin-top: 3rem;
+    padding-bottom: 0.1em;
   }
 
-  // h1, h2 { border-bottom: 1px solid $bg-1-dark;}
+  h1, h2 { border-bottom: 1px solid $bg-1-dark;}
 
-  h1 { font-size: 2em; }
-  h2 { font-size: 1.6em; }
-  h3 { font-size: 1.2em; }
-  h4 { font-size: 1em; }
-  h5 { font-size: 0.8em; }
-  h6 { font-size: 0.6em; }
+  h1 { font-weight: $heading-font-weight-dark; font-size: 2em; }
+  h2 { font-weight: $heading-font-weight-dark; font-size: 1.6em; }
+  h3 { font-weight: $heading-font-weight-dark; font-size: 1.2em; }
+  h4 { font-weight: $heading-font-weight-dark; font-size: 1em; }
+  h5 { font-weight: $heading-font-weight-dark; font-size: 0.8em; }
+  h6 { font-weight: $heading-font-weight-dark; font-size: 0.6em; }
 
 
   /*
@@ -359,6 +391,11 @@
     background-color: darken($button-1-bg-dark, 5%);
   }
 
+  button:active {
+    background-color: $base-text-dark;
+    color: $bg-0-dark;
+  }
+
   textarea {
     color: $base-text-dark;
     font-size: $code-font-size-dark;
@@ -370,7 +407,12 @@
 
   ::-webkit-scrollbar { width: 6px; height: 6px; }
   ::-webkit-scrollbar-track { background: #000; }
-  ::-webkit-scrollbar-thumb { background: #444; }
-  ::-webkit-scrollbar-thumb:hover { background: #555; }
+  ::-webkit-scrollbar-thumb { background: #333; }
+  ::-webkit-scrollbar-thumb:hover { background: #444; }
   ::-webkit-scrollbar-corner { background: rgba(0,0,0,0); }
+
+  ::selection {
+    color: $bg-0-dark;
+    background: $base-text-dark;
+  }
 }
