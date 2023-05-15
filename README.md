@@ -4,12 +4,10 @@ Source for [infinitifall.net](https://infinitifall.net/), a blog built with Jeky
 
 ## Features
 
-- Lightweight, pages without images are under 40kb
-- Tactile, minimalist theme
+- Tactile and minimalist theme
 - Responsive design, looks good on Desktop, Laptop, Tablet and Mobile
-- HTML boilerplate so embeds work across social media sites like Facebook, Twitter, Slack
-- Static KaTeX plugin for LaTeX that works without JavaScript
-- Light/Dark theme switcher
+- Embeds on social media sites like Facebook, Twitter, Slack
+- Server side rendered LaTeX that works without JavaScript
 
 
 ## Screenshots
