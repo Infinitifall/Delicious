@@ -2,72 +2,87 @@
 
 
 @font-face {
-  font-family: "EB Garamond";
-  src: local('EB Garamond'), local('EB Garamond Regular'), url("fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf");
+  font-family: "ETBook";
+  src:
+    local('ETBookOT Roman'),
+    url("fonts/et-book-ligatures-enabled/et-book-roman-old-style-figures/etbookot-roman-webfont.woff2"),
+    url("fonts/et-book-ligatures-enabled/et-book-roman-old-style-figures/etbookot-roman-webfont.woff");
 }
 
 @font-face {
-  font-family: "EB Garamond";
-  src: local('EB Garamond Italic'), url("fonts/EB_Garamond/EBGaramond-Italic-VariableFont_wght.ttf");
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "JetBrains Mono NL";
-  src: local('JetBrains Mono NL'), local('JetBrains Mono Regular NL'), url("fonts/JetBrainsMono-2.304/fonts/ttf/JetBrainsMono-Regular.ttf");
-}
-
-@font-face {
-  font-family: "JetBrains Mono NL";
-  src: local('JetBrains Mono Bold NL'), local('JetBrains Mono Bold NL'), url("fonts/JetBrainsMono-2.304/fonts/ttf/JetBrainsMonoNL-Bold.ttf");
+  font-family: "ETBook";
+  src:
+    local('ETBookOT Bold'),
+    url("fonts/et-book-ligatures-enabled/et-book-bold-line-figures/etbookot-bold-webfont.woff2"),
+    url("fonts/et-book-ligatures-enabled/et-book-bold-line-figures/etbookot-bold-webfont.woff");
   font-weight: bold;
 }
 
 @font-face {
-  font-family: "JetBrains Mono NL";
-  src: local('JetBrains Mono Bold Italic NL'), local('JetBrains Mono Bold NL'), url("fonts/JetBrainsMono-2.304/fonts/ttf/JetBrainsMonoNL-BoldItalic.ttf");
+  font-family: "ETBook";
+  src:
+    local('ETBookOT Italic'),
+    url("fonts/et-book-ligatures-enabled/et-book-display-italic-old-style-figures/etbookot-italic-webfont.woff2"),
+    url("fonts/et-book-ligatures-enabled/et-book-display-italic-old-style-figures/etbookot-italic-webfont.woff");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Ubuntu Mono";
+  src:
+    local('Ubuntu Mono Regular'),
+    url("fonts/Ubuntu_Mono/ubuntumono-regular-webfont.woff2"),
+    url("fonts/Ubuntu_Mono/ubuntumono-regular-webfont.woff");
+}
+
+@font-face {
+  font-family: "Ubuntu Mono";
+  src:
+    local('Ubuntu Mono Bold'),
+    url("fonts/Ubuntu_Mono/ubuntumono-bold-webfont.woff2"),
+    url("fonts/Ubuntu_Mono/ubuntumono-bold-webfont.woff");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Ubuntu Mono";
+  src:
+    local('Ubuntu Mono Bold Italic'),
+    url("fonts/Ubuntu_Mono/ubuntumono-bolditalic-webfont.woff2"),
+    url("fonts/Ubuntu_Mono/ubuntumono-bolditalic-webfont.woff");
   font-style: italic;
   font-weight: bold;
 }
 
 @font-face {
-  font-family: "JetBrains Mono NL";
-  src: local('JetBrains Mono Light NL'), local('JetBrains Mono Bold NL'), url("fonts/JetBrainsMono-2.304/fonts/ttf/JetBrainsMonoNL-Light.ttf");
-  font-weight: lighter;
-}
-
-@font-face {
-  font-family: "JetBrains Mono NL";
-  src: local('JetBrains Mono Light Italic NL'), local('JetBrains Mono Bold NL'), url("fonts/JetBrainsMono-2.304/fonts/ttf/JetBrainsMonoNL-LightItalic.ttf");
-  font-style: italic;
-  font-weight: lighter;
-}
-
-@font-face {
-  font-family: "JetBrains Mono NL";
-  src: local('JetBrains Mono Italic NL'), url("fonts/JetBrainsMono-2.304/fonts/ttf/JetBrainsMonoNL-Italic.ttf");
+  font-family: "Ubuntu Mono";
+  src:
+    local('Ubuntu Mono Italic'),
+    url("fonts/Ubuntu_Mono/ubuntumono-italic-webfont.woff2"),
+    url("fonts/Ubuntu_Mono/ubuntumono-italic-webfont.woff");
   font-style: italic;
 }
 
 
 //light theme
 
-$base-font-family: 'EB Garamond', serif;
-$heading-font-family: 'EB Garamond', serif;
-$navbar-font-family: 'EB Garamond', serif;
+$base-font-family: 'ETBook', serif;
+$heading-font-family: 'ETBook', serif;
+$navbar-font-family: 'ETBook', serif;
 
 $base-font-size: 20px;
 $base-line-height: 1.4;
 $base-letter-spacing: 0;
 
 $base-font-weight: 400;
-$heading-font-weight: 450;
+$title-font-weight: 600;
+$heading-font-weight: 400;
 $code-font-weight: 400;
 
 $small-font-size: $base-font-size * 0.8;
-$code-font-family: 'JetBrains Mono NL', monospace;
-$code-font-size: $base-font-size * 0.7;
-$tag-font-size: $base-font-size * 0.65;
+$code-font-family: 'Ubuntu Mono', monospace;
+$code-font-size: $base-font-size * 0.85;
+$tag-font-size: $base-font-size * 0.75;
 $sidebar-font-size: $base-font-size * 0.9;
 $katex-font-size:  $base-font-size * 1;
 
@@ -100,26 +115,28 @@ $gallery-width: 1000px;
 
 $image-width: 500px;
 $content-max-width: 95%;
+$screen-width-inflection: 1460px;
 
 
 // dark theme
 
-$base-font-family-dark: 'EB Garamond', serif;
-$heading-font-family-dark: 'EB Garamond', serif;
-$navbar-font-family-dark: 'EB Garamond', serif;
+$base-font-family-dark: 'ETBook', serif;
+$heading-font-family-dark: 'ETBook', serif;
+$navbar-font-family-dark: 'ETBook', serif;
 
 $base-font-size-dark: 20px;
 $base-line-height-dark: 1.4;
 $base-letter-spacing-dark: 0;
 
 $base-font-weight-dark: 400;
-$heading-font-weight-dark: 450;
+$title-font-weight-dark: 600;
+$heading-font-weight-dark: 400;
 $code-font-weight-dark: 400;
 
 $small-font-size-dark: $base-font-size * 0.8;
-$code-font-family-dark: 'JetBrains Mono NL', monospace;
-$code-font-size-dark: $base-font-size * 0.7;
-$tag-font-size-dark: $base-font-size * 0.65;
+$code-font-family-dark: 'Ubuntu Mono', monospace;
+$code-font-size-dark: $base-font-size * 0.85;
+$tag-font-size-dark: $base-font-size * 0.75;
 $sidebar-font-size-dark: $base-font-size * 0.9;
 $katex-font-size-dark:  $base-font-size * 1;
 
@@ -152,7 +169,8 @@ $sidebar-width-dark: 320px;
 $gallery-width-dark: 1000px;
 
 $image-width-dark: 500px;
-$content-max-width-dark:95%;
+$content-max-width-dark: 95%;
+$screen-width-inflection-dark: 1460px;
 
 
 @import
