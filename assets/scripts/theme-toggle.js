@@ -45,4 +45,30 @@ function apply_theme() {
     }
 }
 
-apply_theme();
+
+let themeToggle_bool = false;
+
+const observer = new MutationObserver(function() {
+    let root = document.getElementById('root');
+    let theme_toggle = document.getElementById('theme-toggle');
+
+    if (root && theme_toggle && !themeToggle_bool) {
+        apply_theme();
+        themeToggle_bool = true;
+    }
+
+    if (themeToggle_bool) {
+        observer.disconnect();
+    }
+});
+
+const target = document;
+const config = {
+    childList: true,
+    subtree: true
+};
+
+observer.observe(target, config);
+
+setTimeout(function() { observer.disconnect(); }, 20000);
+
