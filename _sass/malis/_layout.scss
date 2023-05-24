@@ -118,19 +118,6 @@
 
 
   /*
-  Styling for home
-  */
-
-  .home-title {
-    user-select: none;
-  }
-
-  .home-content {
-    user-select: none;
-  }
-
-
-  /*
   Styling for post list
   */
 
@@ -292,11 +279,8 @@
   .navbar-bottom {
     min-height: 1em;
     user-select: none;
-
-    .navbar-license {
-      color: $grey-text;
-      font-size: $small-font-size;
-    }
+    color: $grey-text;
+    font-size: $small-font-size;
   }
 
   .navbar-home {
@@ -438,19 +422,6 @@
       margin-top: 0.5em;
       margin-bottom: 0.25em;
     }
-  }
-  
-
-  /*
-  Styling for home
-  */
-
-  .home-title {
-    user-select: none;
-  }
-
-  .home-content {
-    user-select: none;
   }
 
 
@@ -623,11 +594,8 @@
   .navbar-bottom {
     min-height: 1em;
     user-select: none;
-
-    .navbar-license {
-      color: $grey-text-dark;
-      font-size: $small-font-size-dark;
-    }
+    color: $grey-text-dark;
+    font-size: $small-font-size-dark;
   }
 
   .navbar-home {
