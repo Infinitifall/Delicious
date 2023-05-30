@@ -1,6 +1,6 @@
-# infinitifall.net
+# Delicious
 
-Source for [infinitifall.net](https://infinitifall.net/), a blog built with Jekyll
+A blog template built with Jekyll
 
 ## Features
 
