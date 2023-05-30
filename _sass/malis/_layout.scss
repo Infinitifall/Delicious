@@ -8,7 +8,7 @@
     min-height: 100vh;
     padding: 1em 3vw;
     margin-right: auto;
-    margin-left: calc(50vw - #{MIN($content-width, $content-max-width)} / 2);
+    margin-left: calc(50vw - #{MIN($content-width, $content-max-width)} / 2 - 3vw);
     margin-bottom: 1em;
     background-color: $bg-0;
 
@@ -41,7 +41,7 @@
     }
 
     a:hover {
-      color: darken($grey-text-dark, 20%);
+      color: darken($grey-text, 20%);
     }
   }
 
@@ -156,6 +156,17 @@
     user-select: none;
   }
 
+  .post-tip-right {
+    display: block;
+    float: right;
+    margin-right: -13em;
+    width: 12em;
+
+    @media only screen and (max-width: $screen-width-tips) {
+      display: none;
+    }
+  }
+
   /*
   Styling for tag page
   */
@@ -195,7 +206,7 @@
     font-size: $sidebar-font-size;
     left: 0;
     margin-top: 4em;
-    margin-left: calc(50vw - #{$sidebar-width} - #{MIN($content-width, $content-max-width)} / 2);
+    margin-left: calc(50vw - #{$sidebar-width} - #{MIN($content-width, $content-max-width)} / 2 - 3vw);
     position: fixed;
     width: $sidebar-width;
     user-select: none;
@@ -231,6 +242,9 @@
     border: 1px solid $bg-1;
     border-radius: 0.5em;
     padding: 1em 1em 1em 1.5em;
+    
+    max-height: calc(100vh - 3em - 2em - 4em - 4em - 7em);
+    overflow-y: auto;
   }
 
   /*
@@ -268,6 +282,17 @@
 
       a {
         color: $grey-text;
+      }
+      
+      b {
+        font-size: $base-font-size;
+        display: flex;
+        justify-content: center;
+      }
+
+      ul {
+        margin-left: 0;
+        padding-left: 1em;
       }
     }
   }
@@ -315,7 +340,7 @@
     min-height: 100vh;
     padding: 1em 3vw;
     margin-right: auto;
-    margin-left: calc(50vw - #{MIN($content-width-dark, $content-max-width-dark)} / 2);
+    margin-left: calc(50vw - #{MIN($content-width-dark, $content-max-width-dark)} / 2 - 3vw);
     margin-bottom: 1em;
     background-color: $bg-0-dark;
 
@@ -464,6 +489,17 @@
     user-select: none;
   }
 
+  .post-tip-right {
+    display: block;
+    float: right;
+    margin-right: -13em;
+    width: 12em;
+
+    @media only screen and (max-width: $screen-width-tips-dark) {
+      display: none;
+    }
+  }
+
 
   /*
   Styling for tag page
@@ -504,7 +540,7 @@
     font-size: $sidebar-font-size-dark;
     left: 0;
     margin-top: 4em;
-    margin-left: calc(50vw - #{$sidebar-width-dark} - #{MIN($content-width-dark, $content-max-width-dark)} / 2);
+    margin-left: calc(50vw - #{$sidebar-width-dark} - #{MIN($content-width-dark, $content-max-width-dark)} / 2 - 3vw);
     position: fixed;
     width: $sidebar-width-dark;
     user-select: none;
@@ -583,6 +619,17 @@
 
       a {
         color: $grey-text-dark;
+      }
+      
+      b {
+        font-size: $base-font-size;
+        display: flex;
+        justify-content: center;
+      }
+      
+      ul {
+        margin-left: 0;
+        padding-left: 1em;
       }
     }
   }
