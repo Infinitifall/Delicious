@@ -186,8 +186,8 @@
     display: flex;
     justify-content: center;
 
-    @media screen and (max-width: 600px) {
-      display: block;
+    @media screen and (max-width: $screen-width-mobile) {
+      overflow-x: auto;
       justify-content: left;
       padding-left: 3vw;;
       padding-right: 3vw;
@@ -520,8 +520,8 @@
     display: flex;
     justify-content: center;
 
-    @media screen and (max-width: 600px) {
-      display: block;
+    @media screen and (max-width: $screen-width-mobile-dark) {
+      overflow-x: auto;
       justify-content: left;
       padding-left: 3vw;;
       padding-right: 3vw;

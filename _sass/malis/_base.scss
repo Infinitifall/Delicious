@@ -84,6 +84,7 @@
     color: $code-1;
     font-family: $code-font-family;
     font-size: $code-font-size;
+    line-height: $code-line-height-dark;
     font-weight: $code-font-weight;
     background-color: $bg-code;
     padding: 0.05em 0.2em;
@@ -97,6 +98,7 @@
 
   pre {
     overflow-x: auto;
+    line-height: $code-line-height-dark;
     border: 1px $bg-pre-border solid;
 
     > code {
@@ -294,6 +296,7 @@
     color: $code-1-dark;
     font-family: $code-font-family-dark;
     font-size: $code-font-size-dark;
+    line-height: $code-line-height-dark;
     font-weight: $code-font-weight-dark;
     background-color: $bg-code-dark;
     padding: 0.05em 0.2em;
@@ -307,6 +310,7 @@
 
   pre {
     overflow-x: auto;
+    line-height: $code-line-height-dark;
     border: 1px transparent solid;
 
     > code {

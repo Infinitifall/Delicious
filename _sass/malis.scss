@@ -71,7 +71,8 @@ $heading-font-family: 'ETBook', serif;
 $navbar-font-family: 'ETBook', serif;
 
 $base-font-size: 20px;
-$base-line-height: 1.4;
+$base-line-height: 1.6;
+$code-line-height: 1.4;
 $base-letter-spacing: 0;
 
 $base-font-weight: 400;
@@ -84,7 +85,7 @@ $code-font-family: 'Ubuntu Mono', monospace;
 $code-font-size: $base-font-size * 0.85;
 $tag-font-size: $base-font-size * 0.75;
 $sidebar-font-size: $base-font-size * 0.9;
-$katex-font-size:  $base-font-size * 1;
+$katex-font-size:  $base-font-size * 1.1;
 
 $heading-text: #333;
 $base-text: #333;
@@ -115,7 +116,8 @@ $gallery-width: 1000px;
 
 $image-width: 500px;
 $content-max-width: 95%;
-$screen-width-inflection: 1500px;
+$screen-width-inflection: 1600px;
+$screen-width-mobile: 600px;
 $screen-width-tips: 1366px;
 
 
@@ -126,7 +128,8 @@ $heading-font-family-dark: 'ETBook', serif;
 $navbar-font-family-dark: 'ETBook', serif;
 
 $base-font-size-dark: 20px;
-$base-line-height-dark: 1.4;
+$base-line-height-dark: 1.6;
+$code-line-height-dark: 1.4;
 $base-letter-spacing-dark: 0;
 
 $base-font-weight-dark: 400;
@@ -139,7 +142,7 @@ $code-font-family-dark: 'Ubuntu Mono', monospace;
 $code-font-size-dark: $base-font-size * 0.85;
 $tag-font-size-dark: $base-font-size * 0.75;
 $sidebar-font-size-dark: $base-font-size * 0.9;
-$katex-font-size-dark:  $base-font-size * 1;
+$katex-font-size-dark:  $base-font-size * 1.1;
 
 $heading-text-dark: #ccc;
 $base-text-dark: #ccc;
@@ -171,7 +174,8 @@ $gallery-width-dark: 1000px;
 
 $image-width-dark: 500px;
 $content-max-width-dark: 95%;
-$screen-width-inflection-dark: 1500px;
+$screen-width-inflection-dark: 1600px;
+$screen-width-mobile-dark: 600px;
 $screen-width-tips-dark: 1366px;
 
 
