@@ -9,7 +9,7 @@ _site/
 vendor/
 *.lock
 
-# project specific files
 
-_posts/_Drafts
-
+# user files
+_posts/
+assets/images/

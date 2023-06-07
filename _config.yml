@@ -6,7 +6,7 @@ url: "https://infinitifall.net" # the base hostname & protocol for your site, e.
 permalink: /:categories/:title:output_ext
 author: Infinitifall
 author_url: https://github.com/Infinitifall
-css_js_version: 1.7 # change to bypass browser cache
+css_js_version: 3.2 # change to bypass browser cache
 
 sass:
   sass_dir: _sass
