@@ -2,6 +2,8 @@
 
 A blog template built with Jekyll
 
+***Note**: I've since ported my website to Hugo and created the near identical template [Succulent](https://github.com/Infinitifall/Succulent), which I recommend over Jekyll.*
+
 ## Features
 
 - Tactile and minimalist theme
