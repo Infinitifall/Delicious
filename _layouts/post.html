@@ -38,19 +38,15 @@ layout: default
   {% if page.toc %}
   <div class="post-toc">
     <b>Contents</b>
-    {% if page.title %}
     <ul>
       <li><a href="#">{{ page.title }}</a></li>
     </ul>
-    {% endif %}
     {% include toc.html %}
   </div>
   {% endif %}
 </div>
 <div class="wrapper">
-  {% if page.title %}
   <h1 class="page-title">{{ page.title }}</h1>
-  {% endif %}
   <div class="post-details-inline">
     <div class="navbar-date-author">
       {% if updatedEpoch > publishedEpoch %}
@@ -83,11 +79,9 @@ layout: default
   {% if page.toc and false %}
   <div class="post-toc-inline">
     <b>Contents</b>
-    {% if page.title %}
     <ul>
       <li><a href="#">{{ page.title }}</a></li>
     </ul>
-    {% endif %}
     {% include toc.html %}
   </div>
   {% endif %}
