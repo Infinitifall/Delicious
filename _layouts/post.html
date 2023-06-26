@@ -6,36 +6,6 @@ layout: default
 {%- assign publishedEpoch = page.date | date: "%s" | plus: 0 -%}
 
 <div class="post-details">
-  <div class="post-details-inner">
-    <b>Details</b>
-    <ul>
-      <li>
-      {% if updatedEpoch > publishedEpoch %}
-        {% assign date_format = "%d %B, %Y" %}
-        Updated on {{ page.updated | date: date_format }}
-      {% else %}
-        {% assign date_format = "%d %B, %Y" %}
-        Published on {{ page.date | date: date_format }}
-      {% endif %}
-      </li>
-      <li>
-        Authored by 
-        {% if page.author and page.author_url %}
-          <a href="{{ page.author_url }}">{{ page.author }}</a>
-        {% else %}
-          <a href="{{ site.author_url }}">{{ site.author }}</a>
-        {% endif %}
-      </li>
-      <li>
-        Tagged
-        {% for tag in page.tags %}
-          <!-- <a href="{{ site.url }}/tags.html#{{ tag }}"><code class="post-tag">{{ tag }}</code></a> -->
-          <code class="page-tag">{{ tag }}</code>
-        {% endfor %}
-      </li>
-    </ul>
-  </div>
-  {% if page.toc %}
   <div class="post-toc">
     <b>Contents</b>
     <ul>
@@ -43,30 +13,20 @@ layout: default
     </ul>
     {% include toc.html %}
   </div>
-  {% endif %}
 </div>
 <div class="wrapper">
   <h1 class="page-title">{{ page.title }}</h1>
   <div class="post-details-inline">
     <div class="navbar-date-author">
-      {% if updatedEpoch > publishedEpoch %}
-        Updated
-      {% else %}
+      <span>
         Published
-      {% endif %}
-      by
-      {% if page.author and page.author_url %}
-        <a href="{{ page.author_url }}">{{ page.author }}</a>
-      {% else %}
-        <a href="{{ site.author_url }}">{{ site.author }}</a>
-      {% endif %}
-      on
-      {% if updatedEpoch > publishedEpoch %}
-        {% assign date_format = "%d %B, %Y" %}
-        {{ page.updated | date: date_format }}
-      {% else %}
-        {% assign date_format = "%d %B, %Y" %}
+        {% assign date_format = "%d %b %Y" %}
         {{ page.date | date: date_format }}
+      </span>
+      {% if updatedEpoch > publishedEpoch %}
+        , Updated
+        {% assign date_format = "%d %b %Y" %}
+        {{ page.updated | date: date_format }}
       {% endif %}
     </div>
     <div>
@@ -76,7 +36,7 @@ layout: default
       {% endfor %}
     </div>
   </div>
-  {% if page.toc and false %}
+  {% if false %}
   <div class="post-toc-inline">
     <b>Contents</b>
     <ul>
