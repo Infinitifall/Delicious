@@ -2,7 +2,7 @@
 
 A blog template built with Jekyll
 
-***Note**: I've since ported my website to Hugo and created the identical template [Succulent](https://github.com/Infinitifall/Succulent), which I recommend over Jekyll.*
+***Note**: I've since ported my website to Hugo and created the identical template [Succulent](https://github.com/Infinitifall/Succulent)*
 
 ## Features
 
@@ -15,17 +15,24 @@ A blog template built with Jekyll
 
 ## Install
 
-Install ruby and rubygems first. They are available in the official repositories of all the major distributions. On Arch Linux, this would be `sudo pacman -S ruby rubygems`. Install and set up bundle
+You need to install the prerequisites `ruby`, `rubygems` and `ruby-bundler`.
 
-```bash
-gem install bundler
+- For Debian Linux based distros (Debian, Mint, Ubuntu), install them via
 
-# add local ruby gems to your $PATH
-export PATH=~/.local/share/gem/ruby/3.0.0/bin:$PATH
+    ```bash
+    sudo apt install ruby ruby-rubygems ruby-dev ruby-bundler
+    ```
 
-# tell bundle where to install local gems
-bundle config set --local path ~/.gem
-```
+- For Arch Linux based distros (Arch, Manjaro), install them via
+    ```bash
+    sudo pacman -S ruby rubygems ruby-bundler
+    ```
+
+- For other distributions, packages might be named slightly differently
+
+- For Windows/macOS, [follow the guide](https://jekyllrb.com/docs/installation/)
+
+**Note**: For Linux, prefer installing packages from your distribution's repos over installing with `gem`
 
 Then clone this repo and install dependencies
 
@@ -47,14 +54,4 @@ bundle exec jekyll build
 
 ![Light theme screenshot of text and quotes](assets/images/light.jpeg)
 
-![Light theme screenshot of image code and latex](assets/images/light2.jpeg)
-
-![Light theme screenshot  markdown lists and tables](assets/images/light3.jpeg)
-
 ![Dark theme screenshot of text and quotes](assets/images/dark.jpeg)
-
-![Dark theme screenshot of image code and latex](assets/images/dark2.jpeg)
-
-![Dark theme screenshot  markdown lists and tables](assets/images/dark3.jpeg)
-
-
