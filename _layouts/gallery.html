@@ -3,7 +3,13 @@ layout: default
 ---
 
 <div class="wrapper-gallery">
+  {% include theme-toggle.html %}
   <h1 class="page-title">{{ page.title }}</h1>
+  <div class="page-details-inline">
+    <div class="go-home">
+      <a href="{{ '/' | relative_url }}">Go home</a>
+    </div>
+  </div>
   <main>
   {{ content }}
   </main>
