@@ -17,13 +17,13 @@ layout: default
     <div class="page-date">
       <div>
         Published
-        {% assign date_format = "%d %b %Y" %}
+        {% assign date_format = "%Y, %b %d" %}
         {{ page.date | date: date_format }}
       </div>
       <!-- {% if updatedEpoch > publishedEpoch %}
       <div>
          Updated
-        {% assign date_format = "%d %b %Y" %}
+        {% assign date_format = "%Y, %b %d" %}
         {{ page.updated | date: date_format }}
       </div>
       {% endif %} -->

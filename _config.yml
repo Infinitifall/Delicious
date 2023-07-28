@@ -4,7 +4,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://infinitifall.net" # the base hostname & protocol for your site, e.g. http://example.com
 # permalink: /:categories/:year/:month/:day/:title:output_ext
 permalink: /:categories/:title:output_ext
-css_js_version: 6.6 # change to bypass browser cache
+css_js_version: 7.1 # change to bypass browser cache
 
 sass:
   sass_dir: _sass

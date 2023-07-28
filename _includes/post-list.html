@@ -1,10 +1,10 @@
 <li class="post-list">
   <div class="post-date">
     {% if post.updated %}
-    {% assign date_format = "%d %b %y" %}
+    {% assign date_format = "%Y, %b %d" %}
     {{ post.updated | date: date_format }}
     {% else if post.date %}
-    {% assign date_format = "%d %b %y" %}
+    {% assign date_format = "%Y, %b %d" %}
     {{ post.date | date: date_format }}
     {% endif %}
   </div>
