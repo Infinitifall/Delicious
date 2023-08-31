@@ -10,11 +10,11 @@ layout: default
 <div class="wrapper">
   <h1 class="page-title">{{ page.title }}</h1>
   <div class="page-details-inline">
-    <!-- <div class="page-tags">
+    <div class="page-tags">
       {% for tag in page.tags %}
         <code class="page-tag">{{ tag }}</code>
       {% endfor %}
-    </div> -->
+    </div>
     <div class="page-date">
       <div>
         Published
@@ -44,3 +44,4 @@ layout: default
   </main>
 </div>
 
+{% include navbar-bottom.html %}
