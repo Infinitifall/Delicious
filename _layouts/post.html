@@ -5,8 +5,9 @@ layout: default
 {%- assign updatedEpoch = page.updated | date: "%s" | plus: 0 -%}
 {%- assign publishedEpoch = page.date | date: "%s" | plus: 0 -%}
 
+{% include sidebar.html %}
+
 <div class="wrapper">
-  {% include theme-toggle.html %}
   <h1 class="page-title">{{ page.title }}</h1>
   <div class="page-details-inline">
     <!-- <div class="page-tags">
@@ -27,9 +28,6 @@ layout: default
         {{ page.updated | date: date_format }}
       </div>
       {% endif %} -->
-    </div>
-    <div class="go-home">
-      <a href="{{ '/' | relative_url }}">See all posts</a>
     </div>
   </div>
   {% if false %}
