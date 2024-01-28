@@ -16,18 +16,19 @@ layout: default
       {% endfor %}
     </div>
     <div class="page-date">
-      <div>
+      <span>
         Published
         {% assign date_format = "%Y, %b %d" %}
         {{ page.date | date: date_format }}
-      </div>
-      <!-- {% if updatedEpoch > publishedEpoch %}
-      <div>
+      </span>
+      {% if updatedEpoch > publishedEpoch %}
+      |
+      <span>
          Updated
         {% assign date_format = "%Y, %b %d" %}
         {{ page.updated | date: date_format }}
-      </div>
-      {% endif %} -->
+      </span>
+      {% endif %}
     </div>
   </div>
   {% if false %}
