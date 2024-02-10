@@ -1,10 +1,9 @@
 ---
-layout: home
-title: Infinitifall's website
-excerpt: "Infinitifall's website"
+layout: "home"
+title: "Delicious template"
 ---
 
-Welcome to my website
+Welcome! [Delicious](https://github.com/Infinitifall/Delicious) is a website template in `Jekyll` by Infinitifall!
 
-<img src='{{ "assets/images/gallery/24_dark.jpeg" | relative_url }}' alt="A fractal staircase arena" style="max-width:100%;">
-*`CTF_fractal` A fractal staircase arena*
+<img src='{{ "assets/images/gallery/nature-wave-crashes-upon-darkening-coastline-cliff-generated-by-ai.jpg" | relative_url }}' alt="" style="max-width:100%;">
+*`AI generated` wave crashing upon coast, by [vecstock](https://www.freepik.com/free-photo/nature-wave-crashes-upon-darkening-coastline-cliff-generated-by-ai_41218963.htm) on Freepik.*

@@ -3,52 +3,13 @@ layout: gallery
 title: "Gallery"
 ---
 
-<img src='{{ "assets/images/gallery/5.jpeg" | relative_url }}' alt="" style="max-width:49%; float:left;">
+<img src='{{ "assets/images/gallery/sports-car-driving-asphalt-road-night-generative-ai.jpg" | relative_url }}' alt="" style="max-width:100%">
+*`AI generated` sports car on asphalt, by [vecstock](https://www.freepik.com/free-photo/sports-car-driving-asphalt-road-night-generative-ai_40936318.htm) on Freepik.*
 
-<img src='{{ "assets/images/gallery/7.jpeg" | relative_url }}' alt="" style="max-width:49%; float:right;">
-<img src='{{ "assets/images/gallery/18.jpeg" | relative_url }}' alt="" style="max-width:100%">
-*`CTF++` Beautiful vertical CTF arena*
 
-<img src='{{ "assets/images/gallery/28.jpeg" | relative_url }}' alt="" style="max-width:100%">
-*An attempt at creating a chess game using boolean logic*
+<img src='{{ "assets/images/gallery/250100C37A4DD10664EC3A2E3559D03464AFBFD638B53EF188821868566051D6.jpeg" | relative_url }}' alt="" style="max-width:49%; float:left;">
 
-<img src='{{ "assets/images/gallery/12.jpeg" | relative_url }}' alt="" style="max-width:100%">
-*An ultramodern house*
+<img src='{{ "assets/images/gallery/0788F6EBDC478A90D75CE7445181F965AE640E8B91A7FA22460CCC372424D1E9.jpeg" | relative_url }}' alt="" style="max-width:49%; float:right;">
 
-<img src='{{ "assets/images/gallery/8.jpeg" | relative_url }}' alt="" style="max-width:100%">
-*`Hallucination` Branching towers float alongside giant trees surrounded by the cool mist*
-
-<img src='{{ "assets/images/gallery/16.jpeg" | relative_url }}' alt="" style="max-width:49%; float:left;">
-
-<img src='{{ "assets/images/gallery/15.jpeg" | relative_url }}' alt="" style="max-width:49%; float:right;">
-
-<img src='{{ "assets/images/gallery/14.jpeg" | relative_url }}' alt="" style="max-width:100%">
-*`Esplanade` Sprawling magical map set in a dense forest*
-
-<img src='{{ "assets/images/gallery/1.jpeg" | relative_url }}' alt="" style="max-width:100%">
-*`Monochromism` Dark hazy dystopian hellscape*
-
-<img src='{{ "assets/images/gallery/40.jpeg" | relative_url }}' alt="" style="max-width:100%">
-*Text encoding and decoding using boolean logic*
-
-<img src='{{ "assets/images/gallery/2.jpeg" | relative_url }}' alt="" style="max-width:100%">
-*`CTF++ (old)` A view from the lower base, with the upper base's flags visible*
-
-<img src='{{ "assets/images/gallery/25.jpeg" | relative_url }}' alt="" style="max-width:100%">
-*A fractal staircase*
-
-<img src='{{ "assets/images/gallery/41.jpeg" | relative_url }}' alt="" style="max-width:100%">
-*Variable countdown timer using boolean logic*
-
-<img src='{{ "assets/images/gallery/27.jpeg" | relative_url }}' alt="" style="max-width:100%">
-*`Intersections` Puzzle parkour with a twist*
-
-<img src='{{ "assets/images/gallery/9.jpeg" | relative_url }}' alt="" style="max-width:100%">
-*Dark abandoned arcade complex filled with creatures you don't want to meet*
-
-<img src='{{ "assets/images/gallery/13.jpeg" | relative_url }}' alt="" style="max-width:100%">
-*`Treetops` Interconnected tree-house complex resting on massive trees*
-
-<img src='{{ "assets/images/gallery/4.jpeg" | relative_url }}' alt="" style="max-width:100%">
-*`Giga_Creepers` Colorful, climbable creepers rising up from the sea*
-
+<img src='{{ "assets/images/gallery/underwater-nature-fish-coral-seaweed-starfish-generated-by-ai.jpg" | relative_url }}' alt="" style="max-width:100%">
+*`AI generated` images by [TomR_NYC](https://civitai.com/images/6190653), [Ajuro](https://civitai.com/images/6216182) on CivitAI; `AI generated` underwater coral reef, by [vecstock](https://www.freepik.com/free-photo/underwater-nature-fish-coral-seaweed-starfish-generated-by-ai_41218698.htm) on Freepik.*
