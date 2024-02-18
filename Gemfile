@@ -12,3 +12,6 @@ gem "webrick"
 
 gem "kramdown-math-katex"
 gem 'jekyll-toc'
+
+# should be redundant but bundle doesn't have this on my system
+gem "json"
